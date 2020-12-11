@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="632275f8-3b4e-43d8-82d0-d17cabb5061b" name="Default Changelist" comment="" />
+    <list default="true" id="632275f8-3b4e-43d8-82d0-d17cabb5061b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myprofile.php" beforeDir="false" afterPath="$PROJECT_DIR$/myprofile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/welcome.php" beforeDir="false" afterPath="$PROJECT_DIR$/welcome.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,7 +15,11 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1lRTx6wNPViUzBTbS3iZNB0YM8P" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -33,7 +42,7 @@
       <workItem from="1607559148581" duration="4494000" />
       <workItem from="1607590907008" duration="4505000" />
       <workItem from="1607621839163" duration="9546000" />
-      <workItem from="1607691009568" duration="8921000" />
+      <workItem from="1607691009568" duration="14485000" />
     </task>
     <servers />
   </component>
@@ -41,6 +50,14 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="836" y="427" key="Github.ShareDialog" timestamp="1607701626984">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="836" y="427" key="Github.ShareDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1607701626984" />
+    <state x="1040" y="143" key="Github.UntrackedFilesDialog" timestamp="1607701682766">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="1040" y="143" key="Github.UntrackedFilesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1607701682766" />
     <state x="1243" y="572" key="NewPhpFileDialog" timestamp="1607559379359">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

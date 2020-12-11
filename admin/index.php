@@ -6,7 +6,7 @@ $msg = '';
 if (isset($_POST['login'])) {
     $uname = $_POST['username'];
     $Password = $_POST['Password'];
-    $query = mysqli_query($conn, "select ID from tbladmin where  AdminuserName='$uname' && Password='$Password' ");
+    $query = mysqli_query($conn, "select ID from admin where  AdminUserName='$uname' && AdminPassword='$Password' ");
     $ret = mysqli_fetch_array($query);
     if ($ret > 0) {
         $_SESSION['aid'] = $ret['ID'];
@@ -28,19 +28,13 @@ if (isset($_POST['login'])) {
     <title>HRMS Admin Login</title>
     <!-- Custom styles for this template-->
     <link href="../css/sb-admin-2.min.css" rel="stylesheet">
-
 </head>
-
 <body class="bg-gradient-primary">
-
 <div class="container">
-    <h3 align="center" style="color: #000000; padding-top: 2%">Employee Record Managment System</h3>
-
+    <h3 align="center" style="color: #000000; padding-top: 2%">Human Resource Management System</h3>
     <!-- Outer Row -->
     <div class="row justify-content-center">
-
         <div class="col-xl-10 col-lg-12 col-md-9">
-
             <div class="card o-hidden border-0 shadow-lg my-5">
                 <div class="card-body p-0">
                     <!-- Nested Row within Card Body -->
@@ -66,29 +60,18 @@ if (isset($_POST['login'])) {
                                         <input type="password" class="form-control form-control-user" id="Password"
                                                name="Password" placeholder="Password" required="true">
                                     </div>
-
-
                                     <p><input type="submit" class="btn btn-primary btn-user btn-block" name="login"
                                               value="login"></p>
-
                                     <hr>
-
                                 </form>
                                 <hr>
-
-
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
-
     </div>
-
 </div>
-
 </body>
-
 </html>

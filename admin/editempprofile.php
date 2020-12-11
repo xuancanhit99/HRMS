@@ -4,11 +4,11 @@ error_reporting(0);
 include('includes/dbconnection.php');
 global $conn;
 //error_reporting(0);
-if (strlen($_SESSION['uid'] == 0)) {
+if (strlen($_SESSION['aid'] == 0)) {
     header('location:logout.php');
 } else {
     if (isset($_POST['submit'])) {
-        $eid = $_SESSION['uid'];
+        $eid = $_GET['editid'];
         $FName = $_POST['FirstName'];
         $LName = $_POST['LastName'];
         $empcode = $_POST['EmpCode'];
@@ -19,7 +19,7 @@ if (strlen($_SESSION['uid'] == 0)) {
         $empjdate = $_POST['EmpJoingdate'];
         $query = mysqli_query($conn, "update empdetail set EmpFName='$FName',  EmpLName='$LName', EmpCode='$empcode', EmpDept='$EmpDept', EmpDesignation='$EmpDesignation', EmpContactNo='$EmpContactNo', EmpGender='$gender',EmpJoingDate='$empjdate' where ID='$eid'");
         if ($query) {
-            $msg = "Your profile has been updated.";
+            $msg = "Employee profile has been updated.";
         } else {
             $msg = "Something Went Wrong. Please try again.";
         }
@@ -28,42 +28,36 @@ if (strlen($_SESSION['uid'] == 0)) {
 
     <!DOCTYPE html>
     <html lang="en">
+
     <head>
+
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="Human resource management system">
         <meta name="author" content="Xuan Canh">
-        <title>My Profile</title>
+        <title>Edit Employee Profile</title>
+        <script src="https://kit.fontawesome.com/e427de2876.js" crossorigin="anonymous"></script>
         <!-- Custom styles for this template-->
-        <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
+        <link href="../css/sb-admin-2.min.css" rel="stylesheet">
     </head>
-
     <body id="page-top">
-
     <!-- Page Wrapper -->
     <div id="wrapper">
-
         <!-- Sidebar -->
         <?php include_once('includes/sidebar.php') ?>
         <!-- End of Sidebar -->
-
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
-
             <!-- Main Content -->
             <div id="content">
-
                 <!-- Topbar -->
                 <?php include_once('includes/header.php') ?>
                 <!-- End of Topbar -->
-
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">My Profile</h1>
+                    <h1 class="h3 mb-4 text-gray-800">Edit Employee Profile</h1>
 
                     <p style="font-size:16px; color:red" align="center"> <?php if ($msg) {
                             echo $msg;
@@ -71,24 +65,23 @@ if (strlen($_SESSION['uid'] == 0)) {
 
                     <form class="user" method="post" action="">
                         <?php
-                        $eid = $_SESSION['uid'];
-                        $ret = mysqli_query($conn, "select * from empdetail where ID='$eid'");
+                        $aid = $_GET['editid'];
+                        $ret = mysqli_query($conn, "select * from empdetail where ID='$aid'");
                         $cnt = 1;
                         while ($row = mysqli_fetch_array($ret)) {
-
                             ?>
                             <div class="row">
                                 <div class="col-4 mb-3">First Name</div>
                                 <div class="col-8 mb-3"><input type="text" class="form-control form-control-user"
                                                                id="FirstName" name="FirstName"
-                                                               aria-describedby="emailHelp" required="true"
+                                                               aria-describedby="emailHelp"
                                                                value="<?php echo $row['EmpFName']; ?>"></div>
                             </div>
                             <div class="row">
                                 <div class="col-4 mb-3">Last Name</div>
                                 <div class="col-8 mb-3"><input type="text" class="form-control form-control-user"
                                                                id="LastName" name="LastName"
-                                                               aria-describedby="emailHelp" required="true"
+                                                               aria-describedby="emailHelp"
                                                                value="<?php echo $row['EmpLName']; ?>"></div>
                             </div>
 
@@ -97,7 +90,7 @@ if (strlen($_SESSION['uid'] == 0)) {
                                 <div class="col-4 mb-3">Employee Code</div>
                                 <div class="col-8 mb-3">
                                     <input type="text" class="form-control form-control-user" id="EmpCode"
-                                           name="EmpCode" aria-describedby="emailHelp" required="true"
+                                           name="EmpCode" aria-describedby="emailHelp"
                                            value="<?php echo $row['EmpCode']; ?>"></div>
                             </div>
 
@@ -105,7 +98,7 @@ if (strlen($_SESSION['uid'] == 0)) {
                                 <div class="col-4 mb-3">Employee Dept</div>
                                 <div class="col-8 mb-3">
                                     <input type="text" class="form-control form-control-user" id="EmpDept"
-                                           name="EmpDept" aria-describedby="emailHelp" required="true"
+                                           name="EmpDept" aria-describedby="emailHelp"
                                            value="<?php echo $row['EmpDept']; ?>">
                                 </div>
                             </div>
@@ -114,7 +107,7 @@ if (strlen($_SESSION['uid'] == 0)) {
 
                                 <div class="col-8 mb-3">
                                     <input type="text" class="form-control form-control-user" id="EmpDesignation"
-                                           name="EmpDesignation" aria-describedby="emailHelp" required="true"
+                                           name="EmpDesignation" aria-describedby="emailHelp"
                                            value="<?php echo $row['EmpDesignation']; ?>">
                                 </div>
                             </div>
@@ -122,7 +115,7 @@ if (strlen($_SESSION['uid'] == 0)) {
                                 <div class="col-4 mb-3">Employee Contact No.</div>
                                 <div class="col-8 mb-3">
                                     <input type="text" class="form-control form-control-user" id="EmpContactNo"
-                                           name="EmpContactNo" aria-describedby="emailHelp" required="true"
+                                           name="EmpContactNo" aria-describedby="emailHelp"
                                            value="<?php echo $row['EmpContactNo']; ?>">
                                 </div>
                             </div>
@@ -131,7 +124,7 @@ if (strlen($_SESSION['uid'] == 0)) {
                                 <div class="col-8 mb-3">
                                     <input type="email" class="form-control form-control-user" id="Email" name="Email"
                                            aria-describedby="emailHelp" placeholder="Enter Email Address..."
-                                           required="true" value="<?php echo $row['EmpEmail']; ?>" readonly="true">
+                                           value="<?php echo $row['EmpEmail']; ?>" readonly="true">
                                 </div>
                             </div>
 
@@ -152,12 +145,9 @@ if (strlen($_SESSION['uid'] == 0)) {
                                         <input type="radio" id="gender" name="gender" value="Male" checked="true">Male
 
                                         <input type="radio" name="gender" value="Female">Female
-                                    <?php } else if ($row['EmpGender'] == "Female") { ?>
-                                        <input type="radio" id="gender" name="gender" value="Male">Male
-                                        <input type="radio" name="gender" value="Female" checked="true">Female
                                     <?php } else { ?>
                                         <input type="radio" id="gender" name="gender" value="Male">Male
-                                        <input type="radio" name="gender" value="Female">Female
+                                        <input type="radio" name="gender" value="Female" checked="true">Female
                                     <?php } ?>
                                 </div>
                             </div>
@@ -185,25 +175,29 @@ if (strlen($_SESSION['uid'] == 0)) {
 
         </div>
         <!-- End of Content Wrapper -->
+
     </div>
     <!-- End of Page Wrapper -->
+
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
+
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- Core plugin JavaScript-->
-    <script src="https://kit.fontawesome.com/e427de2876.js" crossorigin="anonymous"></script>
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+    <script src="../js/sb-admin-2.min.js"></script>
     <script type="text/javascript">
         $(".jDate").datepicker({
             format: 'yyyy-mm-dd',
             autoclose: true
         }).datepicker("update", "12/12/2020");
     </script>
+
     </body>
+
     </html>
 <?php } ?>
