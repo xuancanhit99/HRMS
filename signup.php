@@ -9,12 +9,12 @@ if (isset($_POST['submit'])) {
     $Email = $_POST['Email'];
     $Password = $_POST['Password'];
     //$RPassword=$_POST['RepeatPassword'];
-    $ret = mysqli_query($conn, "select EmpEmail from employeedetail where EmpEmail='$Email'");
+    $ret = mysqli_query($conn, "select EmpEmail from empdetail where EmpEmail='$Email'");
     $result = mysqli_fetch_array($ret);
     if ($result > 0) {
         $msg = "This email already associated with another account";
     } else {
-        $query = mysqli_query($conn, "insert into employeedetail(EmpFname, EmpLName, EmpCode, EmpEmail,  EmpPassword) value('$FName', '$LName', '$empcode', '$Email', '$Password' )");
+        $query = mysqli_query($conn, "insert into empdetail(EmpFName, EmpLName, EmpCode, EmpEmail,  EmpPassword) value('$FName', '$LName', '$empcode', '$Email', '$Password' )");
         if ($query) {
             $msg = "You have successfully registered";
         } else {
@@ -52,7 +52,7 @@ if (isset($_POST['submit'])) {
 
 <body class="bg-gradient-primary">
 <div class="container">
-    <h3 align="center" style="color: black; padding-top: 1%">Human resource management system</h3>
+    <a href="index.php"><h3 align="center" style="color: black; padding-top: 1%">Human resource management system</h3></a>
     <div class="card o-hidden border-0 shadow-lg my-5">
         <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
@@ -71,12 +71,12 @@ if (isset($_POST['submit'])) {
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                     <input type="text" class="form-control form-control-user" id="FirstName"
-                                           name="FirstName" placeholder="First Name" pattern="[A-Za-z]+"
+                                           name="FirstName" placeholder="First Name" pattern="[A-Za-z ]+"
                                            required="true">
                                 </div>
                                 <div class="col-sm-6">
                                     <input type="text" class="form-control form-control-user" id="LastName"
-                                           name="LastName" placeholder="Last Name" pattern="[A-Za-z]+" required="true">
+                                           name="LastName" placeholder="Last Name" pattern="[A-Za-z ]+" required="true">
                                 </div>
                             </div>
                             <div class="form-group">

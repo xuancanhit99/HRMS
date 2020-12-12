@@ -31,7 +31,7 @@ if (isset($_POST['login'])) {
 </head>
 <body class="bg-gradient-primary">
 <div class="container">
-    <h3 align="center" style="color: #000000; padding-top: 2%">Human Resource Management System</h3>
+    <a href="../index.php"><h3 align="center" style="color: #000000; padding-top: 2%">Human Resource Management System</h3></a>
     <!-- Outer Row -->
     <div class="row justify-content-center">
         <div class="col-xl-10 col-lg-12 col-md-9">
