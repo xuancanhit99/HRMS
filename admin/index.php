@@ -54,7 +54,7 @@ if (isset($_POST['login'])) {
                                     <div class="form-group">
                                         <input type="test" class="form-control form-control-user" id="username"
                                                name="username" aria-describedby="emailHelp" required="true"
-                                               placeholder="Enter username ...">
+                                               placeholder="Enter username...">
                                     </div>
                                     <div class="form-group">
                                         <input type="password" class="form-control form-control-user" id="Password"

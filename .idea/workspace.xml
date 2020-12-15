@@ -1,14 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="632275f8-3b4e-43d8-82d0-d17cabb5061b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/admin/addemp.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/editemp.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/empdelete.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/includes/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/allemployees.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/allemployees.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/editempedu.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/editempedu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/editempexp.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/editempexp.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/editempprofile.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/editempprofile.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/sb-admin-2.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/sb-admin-2.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signin.php" beforeDir="false" afterPath="$PROJECT_DIR$/signin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signup.php" beforeDir="false" afterPath="$PROJECT_DIR$/signup.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +54,12 @@
     <property name="settings.editor.selected.configurable" value="web.server" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\HRMS\admin" />
+      <recent name="C:\xampp\htdocs\HRMS\admin\includes" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -45,7 +71,10 @@
       <workItem from="1607559148581" duration="4494000" />
       <workItem from="1607590907008" duration="4505000" />
       <workItem from="1607621839163" duration="9546000" />
-      <workItem from="1607691009568" duration="18442000" />
+      <workItem from="1607691009568" duration="19302000" />
+      <workItem from="1607772048985" duration="2480000" />
+      <workItem from="1607955628077" duration="21890000" />
+      <workItem from="1608056256770" duration="13564000" />
     </task>
     <task id="LOCAL-00001" summary="Update Admin">
       <created>1607707100906</created>
@@ -54,15 +83,35 @@
       <option name="project" value="LOCAL" />
       <updated>1607707100906</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Update link to my fb and fix signup">
+      <created>1607732977135</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1607732977135</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update Admin" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update Admin" />
+    <MESSAGE value="Update link to my fb and fix signup" />
+    <MESSAGE value="update admin" />
+    <option name="LAST_COMMIT_MESSAGE" value="update admin" />
   </component>
   <component name="WindowStateProjectService">
     <state x="836" y="427" key="Github.ShareDialog" timestamp="1607701626984">
@@ -73,17 +122,21 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="1040" y="143" key="Github.UntrackedFilesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1607701682766" />
-    <state x="1243" y="572" key="NewPhpFileDialog" timestamp="1607559379359">
+    <state x="1243" y="572" key="NewPhpFileDialog" timestamp="1608067179719">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="1243" y="572" key="NewPhpFileDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1607559379359" />
+    <state x="1243" y="572" key="NewPhpFileDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1608067179719" />
     <state x="461" y="170" key="SettingsEditor" timestamp="1607559231759">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="461" y="170" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1607559231759" />
-    <state x="552" y="254" key="Vcs.Push.Dialog.v2" timestamp="1607707107897">
+    <state x="552" y="254" key="Vcs.Push.Dialog.v2" timestamp="1607732980959">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="254" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1607707107897" />
+    <state x="552" y="254" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1607732980959" />
+    <state x="143" y="102" width="672" height="678" key="search.everywhere.popup" timestamp="1607959615456">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="143" y="102" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1607959615456" />
   </component>
 </project>

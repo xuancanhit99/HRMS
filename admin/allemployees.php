@@ -44,73 +44,118 @@ if (strlen($_SESSION['aid'] == 0)) {
         <script src="https://kit.fontawesome.com/e427de2876.js" crossorigin="anonymous"></script>
         <!-- Custom styles for this template-->
         <link href="../css/sb-admin-2.min.css" rel="stylesheet">
-
     </head>
-
     <body id="page-top">
-
     <!-- Page Wrapper -->
     <div id="wrapper">
-
         <!-- Sidebar -->
         <?php include_once('includes/sidebar.php') ?>
         <!-- End of Sidebar -->
-
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
-
             <!-- Main Content -->
             <div id="content">
-
                 <!-- Topbar -->
                 <?php include_once('includes/header.php') ?>
                 <!-- End of Topbar -->
-
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Employees Details</h1>
+                    <h1 class="h3 mb-4 text-gray-800">Employees Details <br>
+                        <a href="addemp.php" title="Add employee"><i class="fas fa-user-plus"></i></a> |
+                        <a href="allemployees.php" title="Refresh"><i class="fas fa-sync-alt"></i></a> |
+                        <a onclick="printData()" title="Print"><i class="fas fa-print"></i></a>
+                        <style>
+                            a:link {
+                                color: chocolate;
+                                background-color: transparent;
+                                text-decoration: none;
+                            }
+
+                            a:visited {
+                                color: grey;
+                                background-color: transparent;
+                                text-decoration: none;
+                            }
+
+                            a:hover {
+                                color: dodgerblue;
+                                background-color: transparent;
+                                text-decoration: underline;
+                            }
+
+                            a:active {
+                                color: yellow;
+                                background-color: transparent;
+                                text-decoration: underline;
+                            }
+                        </style>
+                    </h1>
+
+                    <script type="text/javascript">
+                        function printData()
+                        {
+                            var divToPrint=document.getElementById("dataTable");
+                            newWin= window.open("");
+                            newWin.document.write(divToPrint.outerHTML);
+                            newWin.print();
+                            newWin.close();
+                        }
+
+                        $('button').on('click',function(){
+                            printData();
+                        })
+                    </script>
 
                     <p style="font-size:16px; color:red" align="center"> <?php if ($msg) {
                             echo $msg;
                         } ?> </p>
 
                     <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-
+                        <table  class="table table-bordered" id="dataTable" width="100%" border="1" cellpadding="3">
                             <tr>
                                 <th>№</th>
                                 <th>Emp Code</th>
-                                <th>Emp First Name</th>
-                                <th>Emp Last Name</th>
+                                <th>Emp Full Name</th>
+                                <th>Emp Dept: Designation</th>
                                 <th>Emp Email</th>
-                                <th>Emp Contact no</th>
-                                <th>Emp Joining Date</th>
-                                <th>Action</th>
+                                <th>Emp Start</th>
+                                <th>Emp Finish</th>
+                                <th>Emp Status</th>
+                                <th><i class="fas fa-user-cog fa"></i></th>
                             </tr>
                             <?php
                             $ret = mysqli_query($conn, "select * from empdetail");
                             $cnt = 1;
                             while ($row = mysqli_fetch_array($ret)) {
-
                                 ?>
 
                                 <tr>
                                     <td><?php echo $cnt; ?></td>
                                     <td><?php echo $row['EmpCode']; ?></td>
-                                    <td><?php echo $row['EmpFName']; ?></td>
-                                    <td><?php echo $row['EmpLName']; ?></td>
+                                    <td><?php echo $row['EmpFName'] ." ". $row['EmpLName']; ?></td>
+                                    <td><?php
+                                        if($row['EmpDept']==null || $row['EmpDesignation']==null)
+                                            echo $row['EmpDept'] . $row['EmpDesignation'];
+                                        else
+                                            echo $row['EmpDept'] . ": " . $row['EmpDesignation'];
+                                        ?></td>
                                     <td><?php echo $row['EmpEmail']; ?></td>
-                                    <td><?php echo $row['EmpContactNo']; ?></td>
-                                    <td><?php echo $row['EmpJoingDate']; ?></td>
-                                    <td><a href="editempprofile.php?editid=<?php echo $row['ID']; ?>">Edit Profile
-                                            Details</a> |
-                                        <a href="editempedu.php?editid=<?php echo $row['ID']; ?>">Edit Education
-                                            Details</a> |
-                                        <a href="editempexp.php?editid=<?php echo $row['ID']; ?>">Edit Experience
-                                            Details</a>
+                                    <td style="width:110px;"><?php echo $row['EmpJoingDate']; ?></td>
+                                    <td style="width:110px;"><?php echo $row['EmpFinishWork']; ?></td>
+                                    <td><?php
+                                        if($row['EmpStatus'] == "Active")
+                                            echo '<b>' . $row['EmpStatus'] . '</b>';
+                                        elseif ($row['EmpStatus'] == "Inactive")
+                                            echo '<b><del>' . $row['EmpStatus'] . '</del></b>';
+                                        ?>
                                     </td>
+
+                                    <td>
+                                        <a href="editemp.php?editid=<?php echo $row['ID']; ?>" title="Edit"><i class="fas fa-edit"></i></a>
+                                              <a href="empdelete.php?delid=<?php echo $row['ID']; ?>" title="Delete"><i class="fas fa-trash-alt"></i></a>
+                                    </td>
+
                                 </tr>
 
                                 <?php

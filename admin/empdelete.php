@@ -1,0 +1,143 @@
+<?php
+session_start();
+error_reporting(0);
+include('includes/dbconnection.php');
+global $conn;
+//error_reporting(0);
+if (strlen($_SESSION['aid'] == 0)) {
+    header('location:logout.php');
+} else {
+    if (isset($_POST['submit'])) {
+        $eid = $_GET['delid'];
+        $query = mysqli_query($conn, "delete from empdetail where ID='$eid'");
+        $query1 = mysqli_query($conn, "delete from empedu where EmpID='$eid'");
+        $query2 = mysqli_query($conn, "delete from empexp where EmpID='$eid'");
+        if ($query) {
+            $msg = "Employee deleted successfully.";
+        } else {
+            $msg = "Something Went Wrong.";
+        }
+    }
+    ?>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Human resource management system">
+        <meta name="author" content="Xuan Canh">
+        <title>Admin Profile</title>
+        <script src="https://kit.fontawesome.com/e427de2876.js" crossorigin="anonymous"></script>
+        <!-- Custom styles for this template-->
+        <link href="../css/sb-admin-2.min.css" rel="stylesheet">
+    </head>
+    <body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <?php include_once('includes/sidebar.php') ?>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <?php include_once('includes/header.php') ?>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-4 text-gray-800">Delete Employee</h1>
+
+                    <p style="font-size:16px; color:red" align="center"> <?php if ($msg) {
+                            echo $msg;
+                        } ?> </p>
+
+                    <form class="user" method="post" action="">
+                        <?php
+                        $aid = $_GET['delid'];
+                        $ret = mysqli_query($conn, "select * from empdetail where ID='$aid'");
+                        $cnt = 1;
+                        while ($row = mysqli_fetch_array($ret)) {
+                            ?>
+                            <div class="row">
+                                <div class="col-4 mb-3">Employee Full Name</div>
+                                <div class="col-8 mb-3"><input type="text" class="form-control form-control-user" readonly="true"
+                                                               id="FullName" name="FullName"
+                                                               aria-describedby="emailHelp"
+                                                               value="<?php echo $row['EmpFName'] . ' ' .  $row['EmpLName'] ; ?>"></div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-4 mb-3">Email</div>
+                                <div class="col-8 mb-3">
+                                    <input type="email" class="form-control form-control-user" id="Email" name="Email"
+                                           aria-describedby="emailHelp" placeholder="Enter Email Address..."
+                                           value="<?php echo $row['EmpEmail']; ?>" readonly="true">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-4 mb-3">Employee Registration Date</div>
+                                <div class="col-8  mb-3">
+                                    <input type="text" class="form-control form-control-user" readonly="true"
+                                           value="<?php echo $row['PostingDate']; ?>" id="PostingDate"
+                                           name="PostingDate" aria-describedby="emailHelp">
+                                </div>
+                            </div>
+
+                        <?php } ?>
+                        <div class="row" style="margin-top:4%">
+                            <div class="col-4">
+                                <a>Are you sure you want to delete this employee?</a>
+                            </div>
+
+                            <div class="col-4">
+                                <input type="submit" name="submit" value="Yes. I'm sure."
+                                       class="btn btn-primary btn-user btn-block">
+                            </div>
+
+                            <div class="col-4">
+                                <a href="allemployees.php">
+                                    <input type="button" value="No, please cancel." class="btn btn-primary btn-user btn-block"></a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+            <!-- End of Main Content -->
+            <!-- Footer -->
+            <?php include_once('includes/footer.php'); ?>
+            <!-- End of Footer -->
+        </div>
+        <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+    <!-- Bootstrap core JavaScript-->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="../js/sb-admin-2.min.js"></script>
+    <script type="text/javascript">
+        $(".jDate").datepicker({
+            format: 'yyyy-mm-dd',
+            autoclose: true
+        }).datepicker("update", "12/12/2020");
+    </script>
+
+    </body>
+
+    </html>
+<?php } ?>

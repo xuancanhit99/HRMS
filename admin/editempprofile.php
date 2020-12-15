@@ -3,6 +3,7 @@ session_start();
 error_reporting(0);
 include('includes/dbconnection.php');
 global $conn;
+
 //error_reporting(0);
 if (strlen($_SESSION['aid'] == 0)) {
     header('location:logout.php');
@@ -12,12 +13,19 @@ if (strlen($_SESSION['aid'] == 0)) {
         $FName = $_POST['FirstName'];
         $LName = $_POST['LastName'];
         $empcode = $_POST['EmpCode'];
+
         $EmpDept = $_POST['EmpDept'];
         $EmpDesignation = $_POST['EmpDesignation'];
         $EmpContactNo = $_POST['EmpContactNo'];
+        $empPassword = $_POST['EmpPassword'];
         $gender = $_POST['gender'];
         $empjdate = $_POST['EmpJoingdate'];
-        $query = mysqli_query($conn, "update empdetail set EmpFName='$FName',  EmpLName='$LName', EmpCode='$empcode', EmpDept='$EmpDept', EmpDesignation='$EmpDesignation', EmpContactNo='$EmpContactNo', EmpGender='$gender',EmpJoingDate='$empjdate' where ID='$eid'");
+        $empfinishwork = $_POST['EmpFinishWork'];
+        $empworkingtime = $_POST['EmpWorkingTime'];
+        $empsalary = $_POST['EmpSalary'];
+        $empnote = $_POST['EmpNote'];
+        $empstatus = $_POST['EmpStatus'];
+        $query = mysqli_query($conn, "update empdetail set EmpPassword = '$empPassword', EmpFinishWork = '$empfinishwork', EmpWorkingTime = '$empworkingtime', EmpSalary = '$empsalary', EmpNote = '$empnote', EmpStatus = '$empstatus', EmpFName='$FName',  EmpLName='$LName', EmpCode='$empcode', EmpDept='$EmpDept', EmpDesignation='$EmpDesignation', EmpContactNo='$EmpContactNo', EmpGender='$gender',EmpJoingDate='$empjdate' where ID='$eid'");
         if ($query) {
             $msg = "Employee profile has been updated.";
         } else {
@@ -129,13 +137,70 @@ if (strlen($_SESSION['aid'] == 0)) {
                             </div>
 
                             <div class="row">
-                                <div class="col-4 mb-3">Employee Joing Date(yyyy-mm-dd)</div>
+                                <div class="col-4 mb-3">Employee Password</div>
+                                <div class="col-8 mb-3">
+                                    <input type="password" class="form-control form-control-user" id="EmpPassword"
+                                           name="EmpPassword" aria-describedby="emailHelp"
+                                           value="<?php echo $row['EmpPassword']; ?>">
+                                    <i class="far fa-eye" id="togglePassword"></i>
+                                </div>
+                            </div>
+                            <script>
+                                const togglePassword = document.querySelector('#togglePassword');
+                                const password = document.querySelector('#EmpPassword');
+                                togglePassword.addEventListener('click', function (e) {
+                                    // toggle the type attribute
+                                    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+                                    password.setAttribute('type', type);
+                                    // toggle the eye slash icon
+                                    this.classList.toggle('fa-eye-slash');
+                                });
+                            </script>
+
+                            <div class="row">
+                                <div class="col-4 mb-3">Employee Working Time</div>
+                                <div class="col-8 mb-3">
+                                    <input type="text" class="form-control form-control-user" id="EmpWorkingTime"
+                                           name="EmpWorkingTime" aria-describedby="emailHelp"
+                                           value="<?php echo $row['EmpWorkingTime']; ?>">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4 mb-3">Employee Salary</div>
+                                <div class="col-8 mb-3">
+                                    <input type="text" class="form-control form-control-user" id="EmpSalary"
+                                           name="EmpSalary" aria-describedby="emailHelp"
+                                           value="<?php echo $row['EmpSalary']; ?>">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-4 mb-3">Employee Joing Date(YYYY-MM-DD)</div>
                                 <div class="col-8  mb-3">
                                     <input type="text" class="form-control form-control-user"
                                            value="<?php echo $row['EmpJoingDate']; ?>" id="jDate" name="EmpJoingdate"
                                            aria-describedby="emailHelp">
                                 </div>
                             </div>
+
+                            <div class="row">
+                                <div class="col-4 mb-3">Employee Finish Work Date(YYYY-MM-DD)</div>
+                                <div class="col-8  mb-3">
+                                    <input type="text" class="form-control form-control-user"
+                                           value="<?php echo $row['EmpFinishWork']; ?>" id="$empfinishwork" name="EmpFinishWork"
+                                           aria-describedby="emailHelp">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-4 mb-3">Employee Note</div>
+                                <div class="col-8 mb-3">
+                                    <textarea rows="3" class="form-control form-control-user" id="EmpNote"
+                                              name="EmpNote" aria-describedby="emailHelp"
+                                              value=""> <?php echo $row['EmpNote']; ?></textarea>
+                                </div>
+                            </div>
+
                             <div class="row">
                                 <div class="col-4 mb-3">Gender</div>
                                 <div class="col-4 mb-3">
@@ -151,6 +216,23 @@ if (strlen($_SESSION['aid'] == 0)) {
                                     <?php } ?>
                                 </div>
                             </div>
+
+                            <div class="row">
+                                <div class="col-4 mb-3">Status</div>
+                                <div class="col-4 mb-3">
+                                    <?php if ($row['EmpStatus'] == "Active") {
+                                        ?>
+                                        <input type="radio" id="EmpStatus" name="EmpStatus" value="Active" checked="true">Active
+
+                                        <input type="radio" name="EmpStatus" value="Inactive">Inactive
+                                    <?php } else { ?>
+                                        <input type="radio" id="EmpStatus" name="EmpStatus" value="Active">Active
+                                        <input type="radio" name="EmpStatus" value="Inactive" checked="true">Inactive
+                                    <?php } ?>
+                                </div>
+                            </div>
+
+
                         <?php } ?>
                         <div class="row" style="margin-top:4%">
                             <div class="col-4"></div>

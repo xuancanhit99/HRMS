@@ -82,6 +82,14 @@ if (strlen($_SESSION['aid'] == 0)) {
                         <?php
                         $aid = $_GET['editid'];
                         $ret = mysqli_query($conn, "select * from empexp where EmpID='$aid'");
+                        if (!$ret)
+                        {
+                            die('Error: ' . mysqli_error($conn));
+                        }
+                        if(mysqli_num_rows($ret) > 0){}
+                        else{
+                            mysqli_query($conn, "insert into empexp(EmpID) value('$aid')");
+                        }
                         $cnt = 1;
                         while ($row = mysqli_fetch_array($ret)) {
 
