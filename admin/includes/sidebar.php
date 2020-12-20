@@ -14,33 +14,33 @@
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
-
     <!-- Divider -->
     <hr class="sidebar-divider">
-
     <!-- Heading -->
     <div class="sidebar-heading">
         Interface
     </div>
-
-
     <!-- Nav Item - Utilities Collapse Menu -->
-
-
     <!-- Nav Item - Charts -->
     <li class="nav-item">
         <a class="nav-link" href="allemployees.php">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>All Employees</span></a>
     </li>
-
-
+    <li class="nav-item">
+        <a class="nav-link" href="addemp.php">
+            <i class="fas fa-fw fa-user-plus"></i>
+            <span>Add Employee</span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="empallnote.php">
+            <i class="fas fa-fw fa-bell"></i>
+            <span>Notice to All Emp</span></a>
+    </li>
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
-
     <!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
     </div>
-
 </ul>

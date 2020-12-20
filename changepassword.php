@@ -3,7 +3,6 @@ session_start();
 error_reporting(0);
 include('includes/dbconnection.php');
 global $conn;
-//error_reporting(0);
 if (strlen($_SESSION['uid'] == 0)) {
     header('location:logout.php');
 } else {
@@ -20,7 +19,6 @@ if (strlen($_SESSION['uid'] == 0)) {
             $msg = "Your current password is wrong";
         }
     }
-
     ?>
 
     <!DOCTYPE html>
@@ -33,7 +31,6 @@ if (strlen($_SESSION['uid'] == 0)) {
         <meta name="author" content="Xuan Canh">
         <title>Change Password</title>
         <script src="https://kit.fontawesome.com/e427de2876.js" crossorigin="anonymous"></script>
-        <!-- Custom styles for this template-->
         <link href="css/sb-admin-2.min.css" rel="stylesheet">
         <script type="text/javascript">
             function checkpass() {
@@ -49,41 +46,31 @@ if (strlen($_SESSION['uid'] == 0)) {
     </head>
 
     <body id="page-top">
-
     <!-- Page Wrapper -->
     <div id="wrapper">
-
         <!-- Sidebar -->
         <?php include_once('includes/sidebar.php') ?>
         <!-- End of Sidebar -->
-
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
-
             <!-- Main Content -->
             <div id="content">
-
                 <!-- Topbar -->
                 <?php include_once('includes/header.php') ?>
                 <!-- End of Topbar -->
-
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
                     <!-- Page Heading -->
                     <h1 class="h3 mb-4 text-gray-800">Change Password</h1>
-
                     <p style="font-size:16px; color:red" align="center"> <?php if ($msg) {
                             echo $msg;
                         } ?> </p>
-
                     <form name="changepassword" class="user" method="post" onsubmit="return checkpass();">
                         <?php
                         $cid = $_SESSION['uid'];
                         $ret = mysqli_query($conn, "select * from empdetail where ID='$cid'");
                         $cnt = 1;
                         while ($row = mysqli_fetch_array($ret)) {
-
                             ?>
                             <div class="row">
                                 <div class="col-4 mb-3">Current Password</div>
@@ -111,38 +98,24 @@ if (strlen($_SESSION['uid'] == 0)) {
                                        class="btn btn-primary btn-user btn-block">
                             </div>
                         </div>
-
                     </form>
-
-
                 </div>
                 <!-- /.container-fluid -->
-
             </div>
             <!-- End of Main Content -->
-
             <!-- Footer -->
             <?php include_once('includes/footer.php'); ?>
             <!-- End of Footer -->
-
         </div>
         <!-- End of Content Wrapper -->
-
     </div>
     <!-- End of Page Wrapper -->
-
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
-
-
-    <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-
-    <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
     <script type="text/javascript">
         $(".jDate").datepicker({

@@ -3,8 +3,6 @@ session_start();
 error_reporting(0);
 include('includes/dbconnection.php');
 global $conn;
-
-//error_reporting(0);
 if (strlen($_SESSION['aid'] == 0)) {
     header('location:logout.php');
 } else {
@@ -13,7 +11,6 @@ if (strlen($_SESSION['aid'] == 0)) {
         $FName = $_POST['FirstName'];
         $LName = $_POST['LastName'];
         $empcode = $_POST['EmpCode'];
-
         $EmpDept = $_POST['EmpDept'];
         $EmpDesignation = $_POST['EmpDesignation'];
         $EmpContactNo = $_POST['EmpContactNo'];
@@ -36,9 +33,7 @@ if (strlen($_SESSION['aid'] == 0)) {
 
     <!DOCTYPE html>
     <html lang="en">
-
     <head>
-
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -46,7 +41,6 @@ if (strlen($_SESSION['aid'] == 0)) {
         <meta name="author" content="Xuan Canh">
         <title>Edit Employee Profile</title>
         <script src="https://kit.fontawesome.com/e427de2876.js" crossorigin="anonymous"></script>
-        <!-- Custom styles for this template-->
         <link href="../css/sb-admin-2.min.css" rel="stylesheet">
     </head>
     <body id="page-top">
@@ -92,8 +86,6 @@ if (strlen($_SESSION['aid'] == 0)) {
                                                                aria-describedby="emailHelp"
                                                                value="<?php echo $row['EmpLName']; ?>"></div>
                             </div>
-
-
                             <div class="row">
                                 <div class="col-4 mb-3">Employee Code</div>
                                 <div class="col-8 mb-3">
@@ -101,7 +93,6 @@ if (strlen($_SESSION['aid'] == 0)) {
                                            name="EmpCode" aria-describedby="emailHelp"
                                            value="<?php echo $row['EmpCode']; ?>"></div>
                             </div>
-
                             <div class="row">
                                 <div class="col-4 mb-3">Employee Dept</div>
                                 <div class="col-8 mb-3">
@@ -135,7 +126,6 @@ if (strlen($_SESSION['aid'] == 0)) {
                                            value="<?php echo $row['EmpEmail']; ?>" readonly="true">
                                 </div>
                             </div>
-
                             <div class="row">
                                 <div class="col-4 mb-3">Employee Password</div>
                                 <div class="col-8 mb-3">
@@ -173,7 +163,6 @@ if (strlen($_SESSION['aid'] == 0)) {
                                            value="<?php echo $row['EmpSalary']; ?>">
                                 </div>
                             </div>
-
                             <div class="row">
                                 <div class="col-4 mb-3">Employee Joing Date(YYYY-MM-DD)</div>
                                 <div class="col-8  mb-3">
@@ -182,57 +171,54 @@ if (strlen($_SESSION['aid'] == 0)) {
                                            aria-describedby="emailHelp">
                                 </div>
                             </div>
-
                             <div class="row">
                                 <div class="col-4 mb-3">Employee Finish Work Date(YYYY-MM-DD)</div>
                                 <div class="col-8  mb-3">
                                     <input type="text" class="form-control form-control-user"
-                                           value="<?php echo $row['EmpFinishWork']; ?>" id="$empfinishwork" name="EmpFinishWork"
+                                           value="<?php echo $row['EmpFinishWork']; ?>" id="empfinishwork" name="EmpFinishWork"
                                            aria-describedby="emailHelp">
                                 </div>
                             </div>
-
                             <div class="row">
                                 <div class="col-4 mb-3">Employee Note</div>
                                 <div class="col-8 mb-3">
                                     <textarea rows="3" class="form-control form-control-user" id="EmpNote"
                                               name="EmpNote" aria-describedby="emailHelp"
-                                              value=""> <?php echo $row['EmpNote']; ?></textarea>
+                                              value=""><?php echo $row['EmpNote']; ?></textarea>
                                 </div>
                             </div>
-
                             <div class="row">
                                 <div class="col-4 mb-3">Gender</div>
                                 <div class="col-4 mb-3">
-
                                     <?php if ($row['EmpGender'] == "Male") {
                                         ?>
                                         <input type="radio" id="gender" name="gender" value="Male" checked="true">Male
-
                                         <input type="radio" name="gender" value="Female">Female
-                                    <?php } else { ?>
+                                    <?php } else if ($row['EmpGender'] == "Female") { ?>
                                         <input type="radio" id="gender" name="gender" value="Male">Male
                                         <input type="radio" name="gender" value="Female" checked="true">Female
+                                    <?php } else { ?>
+                                        <input type="radio" id="gender" name="gender" value="Male">Male
+                                        <input type="radio" name="gender" value="Female">Female
                                     <?php } ?>
                                 </div>
                             </div>
-
                             <div class="row">
                                 <div class="col-4 mb-3">Status</div>
                                 <div class="col-4 mb-3">
                                     <?php if ($row['EmpStatus'] == "Active") {
                                         ?>
                                         <input type="radio" id="EmpStatus" name="EmpStatus" value="Active" checked="true">Active
-
                                         <input type="radio" name="EmpStatus" value="Inactive">Inactive
-                                    <?php } else { ?>
+                                    <?php } else if ($row['EmpStatus'] == "Inactive") { ?>
                                         <input type="radio" id="EmpStatus" name="EmpStatus" value="Active">Active
                                         <input type="radio" name="EmpStatus" value="Inactive" checked="true">Inactive
+                                    <?php } else { ?>
+                                        <input type="radio" id="EmpStatus" name="EmpStatus" value="Active">Male
+                                        <input type="radio" name="EmpStatus" value="Inactive">Female
                                     <?php } ?>
                                 </div>
                             </div>
-
-
                         <?php } ?>
                         <div class="row" style="margin-top:4%">
                             <div class="col-4"></div>
@@ -241,36 +227,24 @@ if (strlen($_SESSION['aid'] == 0)) {
                                        class="btn btn-primary btn-user btn-block">
                             </div>
                         </div>
-
                     </form>
-
-
                 </div>
                 <!-- /.container-fluid -->
-
             </div>
             <!-- End of Main Content -->
-
             <!-- Footer -->
             <?php include_once('includes/footer.php'); ?>
             <!-- End of Footer -->
-
         </div>
         <!-- End of Content Wrapper -->
-
     </div>
     <!-- End of Page Wrapper -->
-
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
-
-    <!-- Bootstrap core JavaScript-->
     <script src="../vendor/jquery/jquery.min.js"></script>
     <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
     <script src="../js/sb-admin-2.min.js"></script>
     <script type="text/javascript">
         $(".jDate").datepicker({
@@ -278,8 +252,6 @@ if (strlen($_SESSION['aid'] == 0)) {
             autoclose: true
         }).datepicker("update", "12/12/2020");
     </script>
-
     </body>
-
     </html>
 <?php } ?>

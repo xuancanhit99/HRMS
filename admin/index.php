@@ -26,7 +26,6 @@ if (isset($_POST['login'])) {
     <meta name="description" content="Human resource management system">
     <meta name="author" content="Xuan Canh">
     <title>HRMS Admin Login</title>
-    <!-- Custom styles for this template-->
     <link href="../css/sb-admin-2.min.css" rel="stylesheet">
 </head>
 <body class="bg-gradient-primary">
@@ -61,7 +60,7 @@ if (isset($_POST['login'])) {
                                                name="Password" placeholder="Password" required="true">
                                     </div>
                                     <p><input type="submit" class="btn btn-primary btn-user btn-block" name="login"
-                                              value="login"></p>
+                                              value="Login"></p>
                                     <hr>
                                 </form>
                                 <hr>

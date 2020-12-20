@@ -19,8 +19,6 @@ if (isset($_POST['submit'])) {
     $empsalary = $_POST['EmpSalary'];
     $empnote = $_POST['EmpNote'];
     $empstatus = $_POST['EmpStatus'];
-
-    //$RPassword=$_POST['RepeatPassword'];
     $ret = mysqli_query($conn, "select EmpEmail from empdetail where EmpEmail='$Email'");
     $result = mysqli_fetch_array($ret);
     if ($result > 0) {
@@ -38,14 +36,9 @@ if (isset($_POST['submit'])) {
     }
 }
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -53,7 +46,6 @@ if (isset($_POST['submit'])) {
     <meta name="author" content="Xuan Canh">
     <title>Add Employee Profile</title>
     <script src="https://kit.fontawesome.com/e427de2876.js" crossorigin="anonymous"></script>
-    <!-- Custom styles for this template-->
     <link href="../css/sb-admin-2.min.css" rel="stylesheet">
 </head>
 <body id="page-top">
@@ -73,11 +65,9 @@ if (isset($_POST['submit'])) {
             <div class="container-fluid">
                 <!-- Page Heading -->
                 <h1 class="h3 mb-4 text-gray-800">Add Employee Profile</h1>
-
                 <p style="font-size:16px; color:red" align="center"> <?php if ($msg) {
                         echo $msg;
                     } ?> </p>
-
                 <form class="user" method="post" action="">
                         <div class="row">
                             <div class="col-4 mb-3">First Name</div>
@@ -94,8 +84,6 @@ if (isset($_POST['submit'])) {
                                        name="LastName" pattern="[A-Za-z ]+" required="true">
                             </div>
                         </div>
-
-
                         <div class="row">
                             <div class="col-4 mb-3">Employee Code</div>
                             <div class="col-8 mb-3">
@@ -103,7 +91,6 @@ if (isset($_POST['submit'])) {
                                        pattern="[0-9]+" required="true">
                             </div>
                         </div>
-
                         <div class="row">
                             <div class="col-4 mb-3">Employee Dept</div>
                             <div class="col-8 mb-3">
@@ -132,7 +119,6 @@ if (isset($_POST['submit'])) {
                                        placeholder="Email Address" required="true">
                             </div>
                         </div>
-
                         <div class="row">
                             <div class="col-4 mb-3">Employee Password</div>
                             <div class="col-8 mb-3">
@@ -152,7 +138,6 @@ if (isset($_POST['submit'])) {
                                 this.classList.toggle('fa-eye-slash');
                             });
                         </script>
-
                         <div class="row">
                             <div class="col-4 mb-3">Employee Working Time</div>
                             <div class="col-8 mb-3">
@@ -167,7 +152,6 @@ if (isset($_POST['submit'])) {
                                        name="EmpSalary">
                             </div>
                         </div>
-
                         <div class="row">
                             <div class="col-4 mb-3">Employee Joing Date(YYYY-MM-DD)</div>
                             <div class="col-8  mb-3">
@@ -175,7 +159,6 @@ if (isset($_POST['submit'])) {
                                        value="" id="jDate" name="EmpJoingdate">
                             </div>
                         </div>
-
                         <div class="row">
                             <div class="col-4 mb-3">Employee Finish Work Date(YYYY-MM-DD)</div>
                             <div class="col-8  mb-3">
@@ -184,7 +167,6 @@ if (isset($_POST['submit'])) {
                                        name="EmpFinishWork">
                             </div>
                         </div>
-
                         <div class="row">
                             <div class="col-4 mb-3">Employee Note</div>
                             <div class="col-8 mb-3">
@@ -192,7 +174,6 @@ if (isset($_POST['submit'])) {
                                               name="EmpNote"></textarea>
                             </div>
                         </div>
-
                         <div class="row">
                             <div class="col-4 mb-3">Gender</div>
                             <div class="col-4 mb-3">
@@ -200,7 +181,6 @@ if (isset($_POST['submit'])) {
                                     <input type="radio" name="gender" value="Female">Female
                             </div>
                         </div>
-
                         <div class="row">
                             <div class="col-4 mb-3">Status</div>
                             <div class="col-4 mb-3">
@@ -208,43 +188,30 @@ if (isset($_POST['submit'])) {
                                     <input type="radio" name="EmpStatus" value="Inactive">Inactive
                             </div>
                         </div>
-
                     <div class="row" style="margin-top:4%">
                         <div class="col-4"></div>
                         <div class="col-4">
                             <input type="submit" name="submit" value="Add Employee" class="btn btn-primary btn-user btn-block">
                         </div>
                     </div>
-
                 </form>
-
-
             </div>
             <!-- /.container-fluid -->
-
         </div>
         <!-- End of Main Content -->
-
         <!-- Footer -->
         <?php include_once('includes/footer.php'); ?>
         <!-- End of Footer -->
-
     </div>
     <!-- End of Content Wrapper -->
-
 </div>
 <!-- End of Page Wrapper -->
-
 <!-- Scroll to Top Button-->
 <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
 </a>
-
-<!-- Bootstrap core JavaScript-->
 <script src="../vendor/jquery/jquery.min.js"></script>
 <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-<!-- Custom scripts for all pages-->
 <script src="../js/sb-admin-2.min.js"></script>
 <script type="text/javascript">
     $(".jDate").datepicker({
@@ -252,7 +219,5 @@ if (isset($_POST['submit'])) {
         autoclose: true
     }).datepicker("update", "12/12/2020");
 </script>
-
 </body>
-
 </html>

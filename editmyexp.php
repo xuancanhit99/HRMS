@@ -3,7 +3,6 @@ session_start();
 error_reporting(0);
 include('includes/dbconnection.php');
 global $conn;
-//error_reporting(0);
 if (strlen($_SESSION['uid'] == 0)) {
     header('location:logout.php');
 } else {
@@ -29,50 +28,39 @@ if (strlen($_SESSION['uid'] == 0)) {
         }
     }
     ?>
+
     <!DOCTYPE html>
     <html lang="en">
-
     <head>
-
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="Human resource management system">
         <meta name="author" content="Xuan Canh">
-
         <title>Edit My Expirence</title>
         <script src="https://kit.fontawesome.com/e427de2876.js" crossorigin="anonymous"></script>
-        <!-- Custom styles for this template-->
         <link href="css/sb-admin-2.min.css" rel="stylesheet">
     </head>
     <body id="page-top">
     <!-- Page Wrapper -->
     <div id="wrapper">
-
         <!-- Sidebar -->
         <?php include_once('includes/sidebar.php') ?>
         <!-- End of Sidebar -->
-
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
-
             <!-- Main Content -->
             <div id="content">
-
                 <!-- Topbar -->
                 <?php include_once('includes/header.php') ?>
                 <!-- End of Topbar -->
-
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
                     <!-- Page Heading -->
                     <h1 class="h3 mb-4 text-gray-800">Edit My Experience</h1>
-
                     <p style="font-size:16px; color:red" align="center"> <?php if ($msg) {
                             echo $msg;
                         } ?> </p>
-
                     <form class="user" method="post" action="">
                         <?php
                         $empid = $_SESSION['uid'];
@@ -81,7 +69,6 @@ if (strlen($_SESSION['uid'] == 0)) {
                         if ($num > 0){
                         $cnt = 1;
                         while ($row = mysqli_fetch_array($ret)) {
-
                             ?>
                             <div class="row">
                                 <div class="col-4 mb-3">Employer 1 Name</div>
@@ -97,8 +84,6 @@ if (strlen($_SESSION['uid'] == 0)) {
                                                                value="<?php echo $row['Employer1Designation']; ?>">
                                 </div>
                             </div>
-
-
                             <div class="row">
                                 <div class="col-4 mb-3">Employer 1 CTC</div>
                                 <div class="col-8 mb-3">
@@ -106,7 +91,6 @@ if (strlen($_SESSION['uid'] == 0)) {
                                            name="emp1ctc" aria-describedby="emailHelp"
                                            value="<?php echo $row['Employer1CTC']; ?>"></div>
                             </div>
-
                             <div class="row">
                                 <div class="col-4 mb-3">Employer 1 WorkDuration</div>
                                 <div class="col-8 mb-3">
@@ -129,8 +113,6 @@ if (strlen($_SESSION['uid'] == 0)) {
                                                                value="<?php echo $row['Employer2Designation']; ?>">
                                 </div>
                             </div>
-
-
                             <div class="row">
                                 <div class="col-4 mb-3">Employer 2 CTC</div>
                                 <div class="col-8 mb-3">
@@ -138,7 +120,6 @@ if (strlen($_SESSION['uid'] == 0)) {
                                            name="emp2ctc" aria-describedby="emailHelp"
                                            value="<?php echo $row['Employer2CTC']; ?>"></div>
                             </div>
-
                             <div class="row">
                                 <div class="col-4 mb-3">Employer 2 WorkDuration</div>
                                 <div class="col-8 mb-3">
@@ -161,8 +142,6 @@ if (strlen($_SESSION['uid'] == 0)) {
                                                                value="<?php echo $row['Employer3Designation']; ?>">
                                 </div>
                             </div>
-
-
                             <div class="row">
                                 <div class="col-4 mb-3">Employer 3 CTC</div>
                                 <div class="col-8 mb-3">
@@ -170,7 +149,6 @@ if (strlen($_SESSION['uid'] == 0)) {
                                            name="emp3ctc" aria-describedby="emailHelp"
                                            value="<?php echo $row['Employer3CTC']; ?>"></div>
                             </div>
-
                             <div class="row">
                                 <div class="col-4 mb-3">Employer 3 WorkDuration</div>
                                 <div class="col-8 mb-3">
@@ -187,12 +165,8 @@ if (strlen($_SESSION['uid'] == 0)) {
                                        class="btn btn-primary btn-user btn-block">
                             </div>
                         </div>
-
                     </form>
-
-
                     <?php } else { ?>
-
                         <div class="row" style="margin-top:4%">
                             <div class="col-12" style="font-size:18px; color:red;">First Add your experience details
                                 after that you can edit experience details.
@@ -200,36 +174,23 @@ if (strlen($_SESSION['uid'] == 0)) {
 
                         </div>
                     <?php } ?>
-
-
                 </div>
                 <!-- /.container-fluid -->
-
             </div>
             <!-- End of Main Content -->
-
             <!-- Footer -->
             <?php include_once('includes/footer.php'); ?>
             <!-- End of Footer -->
-
         </div>
         <!-- End of Content Wrapper -->
-
     </div>
     <!-- End of Page Wrapper -->
-
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
-
-
-    <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-
-    <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
     <script type="text/javascript">
         $(".jDate").datepicker({
@@ -237,8 +198,6 @@ if (strlen($_SESSION['uid'] == 0)) {
             autoclose: true
         }).datepicker("update", "12/12/2020");
     </script>
-
     </body>
-
     </html>
 <?php } ?>

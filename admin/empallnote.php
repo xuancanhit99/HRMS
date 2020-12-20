@@ -7,16 +7,17 @@ if (strlen($_SESSION['aid'] == 0)) {
     header('location:logout.php');
 } else {
     if (isset($_POST['submit'])) {
-        $adminid = $_SESSION['aid'];
-        $AName = $_POST['AdminName'];
-        $query = mysqli_query($conn, "update admin set AdminName ='$AName' where ID='$adminid'");
+        $eid = $_GET['editid'];
+        $empallnote = $_POST['EmpAllNote'];
+        $query = mysqli_query($conn, "update empdetail set EmpAllNote= '$empallnote'");
         if ($query) {
-            $msg = "Admin profile has been updated.";
+            $msg = "Notice has been updated.";
         } else {
             $msg = "Something Went Wrong. Please try again.";
         }
     }
     ?>
+
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -25,7 +26,7 @@ if (strlen($_SESSION['aid'] == 0)) {
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="Human resource management system">
         <meta name="author" content="Xuan Canh">
-        <title>Admin Profile</title>
+        <title>Notice to employees</title>
         <script src="https://kit.fontawesome.com/e427de2876.js" crossorigin="anonymous"></script>
         <link href="../css/sb-admin-2.min.css" rel="stylesheet">
     </head>
@@ -45,44 +46,31 @@ if (strlen($_SESSION['aid'] == 0)) {
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Admin Profile</h1>
+                    <h1 class="h3 mb-4 text-gray-800">Notifications to all employees</h1>
+
                     <p style="font-size:16px; color:red" align="center"> <?php if ($msg) {
                             echo $msg;
                         } ?> </p>
+
                     <form class="user" method="post" action="">
                         <?php
-                        $adminid = $_SESSION['aid'];
-                        $ret = mysqli_query($conn, "select * from admin where ID='$adminid'");
-                        $cnt = 1;
+                        $aid = $_GET['editid'];
+                        $ret = mysqli_query($conn, "select * from empdetail where ID='1'");
                         while ($row = mysqli_fetch_array($ret)) {
-                            ?>
-                            <div class="row">
-                                <div class="col-4 mb-3">Admin Name</div>
-                                <div class="col-8 mb-3"><input type="text" class="form-control form-control-user"
-                                                               id="AdminName" name="AdminName"
-                                                               aria-describedby="emailHelp" required="true"
-                                                               value="<?php echo $row['AdminName']; ?>"></div>
+                        ?>
+                        <div class="row">
+                            <div class="col-4 mb-3">Message content</div>
+                            <div class="col-8 mb-3">
+                                    <textarea rows="3" class="form-control form-control-user" id="EmpAllNote"
+                                              name="EmpAllNote" aria-describedby="emailHelp"
+                                              value=""><?php echo $row['EmpAllNote']; ?></textarea>
                             </div>
-                            <div class="row">
-                                <div class="col-4 mb-3">User Name</div>
-                                <div class="col-8 mb-3"><input type="text" class="form-control form-control-user"
-                                                               readonly="true" id="UserName" name="UserName"
-                                                               aria-describedby="emailHelp"
-                                                               value="<?php echo $row['AdminUserName']; ?>"></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-4 mb-3">Admin Registration Date(yyyy-mm-dd)</div>
-                                <div class="col-8  mb-3">
-                                    <input type="text" class="form-control form-control-user" readonly="true"
-                                           value="<?php echo $row['AdminRegdate']; ?>" id="AdminRegdate"
-                                           name="AdminRegdate" aria-describedby="emailHelp">
-                                </div>
-                            </div>
+                        </div>
                         <?php } ?>
                         <div class="row" style="margin-top:4%">
                             <div class="col-4"></div>
                             <div class="col-4">
-                                <input type="submit" name="submit" value="Update"
+                                <input type="submit" name="submit" value="Send notifications"
                                        class="btn btn-primary btn-user btn-block">
                             </div>
                         </div>
@@ -104,13 +92,7 @@ if (strlen($_SESSION['aid'] == 0)) {
     </a>
     <script src="../vendor/jquery/jquery.min.js"></script>
     <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="js/sb-admin-2.min.js"></script>
-    <script type="text/javascript">
-        $(".jDate").datepicker({
-            format: 'yyyy-mm-dd',
-            autoclose: true
-        }).datepicker("update", "12/12/2020");
-    </script>
+    <script src="../js/sb-admin-2.min.js"></script>
     </body>
     </html>
 <?php } ?>

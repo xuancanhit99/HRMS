@@ -42,7 +42,6 @@ if (strlen($_SESSION['aid'] == 0)) {
         <meta name="author" content="Xuan Canh">
         <title>Employees Details</title>
         <script src="https://kit.fontawesome.com/e427de2876.js" crossorigin="anonymous"></script>
-        <!-- Custom styles for this template-->
         <link href="../css/sb-admin-2.min.css" rel="stylesheet">
     </head>
     <body id="page-top">
@@ -71,19 +70,16 @@ if (strlen($_SESSION['aid'] == 0)) {
                                 background-color: transparent;
                                 text-decoration: none;
                             }
-
                             a:visited {
                                 color: grey;
                                 background-color: transparent;
                                 text-decoration: none;
                             }
-
                             a:hover {
                                 color: dodgerblue;
                                 background-color: transparent;
                                 text-decoration: underline;
                             }
-
                             a:active {
                                 color: yellow;
                                 background-color: transparent;
@@ -91,7 +87,6 @@ if (strlen($_SESSION['aid'] == 0)) {
                             }
                         </style>
                     </h1>
-
                     <script type="text/javascript">
                         function printData()
                         {
@@ -106,11 +101,9 @@ if (strlen($_SESSION['aid'] == 0)) {
                             printData();
                         })
                     </script>
-
                     <p style="font-size:16px; color:red" align="center"> <?php if ($msg) {
                             echo $msg;
                         } ?> </p>
-
                     <div class="table-responsive">
                         <table  class="table table-bordered" id="dataTable" width="100%" border="1" cellpadding="3">
                             <tr>
@@ -129,7 +122,6 @@ if (strlen($_SESSION['aid'] == 0)) {
                             $cnt = 1;
                             while ($row = mysqli_fetch_array($ret)) {
                                 ?>
-
                                 <tr>
                                     <td><?php echo $cnt; ?></td>
                                     <td><?php echo $row['EmpCode']; ?></td>
@@ -145,52 +137,38 @@ if (strlen($_SESSION['aid'] == 0)) {
                                     <td style="width:110px;"><?php echo $row['EmpFinishWork']; ?></td>
                                     <td><?php
                                         if($row['EmpStatus'] == "Active")
-                                            echo '<b>' . $row['EmpStatus'] . '</b>';
+                                            echo '<span style="font-size: 10px; color: Tomato;"><i class="fas fa-circle"></i></span> <b>' . $row['EmpStatus'] . '</b>';
                                         elseif ($row['EmpStatus'] == "Inactive")
-                                            echo '<b><del>' . $row['EmpStatus'] . '</del></b>';
+                                            echo '<b>' . $row['EmpStatus'] . '</del></b>';
                                         ?>
                                     </td>
-
                                     <td>
                                         <a href="editemp.php?editid=<?php echo $row['ID']; ?>" title="Edit"><i class="fas fa-edit"></i></a>
                                               <a href="empdelete.php?delid=<?php echo $row['ID']; ?>" title="Delete"><i class="fas fa-trash-alt"></i></a>
                                     </td>
-
                                 </tr>
-
                                 <?php
                                 $cnt = $cnt + 1;
                             } ?>
-
                         </table>
-
                     </div>
-
-
                 </div>
                 <!-- /.container-fluid -->
-
             </div>
             <!-- End of Main Content -->
-
             <!-- Footer -->
             <?php include_once('includes/footer.php'); ?>
             <!-- End of Footer -->
-
         </div>
         <!-- End of Content Wrapper -->
-
     </div>
     <!-- End of Page Wrapper -->
-
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
-    <!-- Bootstrap core JavaScript-->
     <script src="../vendor/jquery/jquery.min.js"></script>
     <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom scripts for all pages-->
     <script src="../js/sb-admin-2.min.js"></script>
     </body>
     </html>

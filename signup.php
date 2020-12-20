@@ -8,7 +8,6 @@ if (isset($_POST['submit'])) {
     $empcode = $_POST['empcode'];
     $Email = $_POST['Email'];
     $Password = $_POST['Password'];
-    //$RPassword=$_POST['RepeatPassword'];
     $ret = mysqli_query($conn, "select EmpEmail from empdetail where EmpEmail='$Email'");
     $result = mysqli_fetch_array($ret);
     if ($result > 0) {
@@ -34,8 +33,6 @@ if (isset($_POST['submit'])) {
     <meta name="description" content="Human resource management system">
     <meta name="author" content="Xuan Canh">
     <title>HRMS Signup</title>
-
-    <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <script type="text/javascript">
         function checkpass() {
@@ -46,7 +43,6 @@ if (isset($_POST['submit'])) {
             }
             return true;
         }
-
     </script>
 </head>
 

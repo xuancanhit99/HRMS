@@ -17,7 +17,12 @@ if (strlen($_SESSION['uid'] == 0)) {
         $EmpContactNo = $_POST['EmpContactNo'];
         $gender = $_POST['gender'];
         $empjdate = $_POST['EmpJoingdate'];
-        $query = mysqli_query($conn, "update empdetail set EmpFName='$FName',  EmpLName='$LName', EmpCode='$empcode', EmpDept='$EmpDept', EmpDesignation='$EmpDesignation', EmpContactNo='$EmpContactNo', EmpGender='$gender',EmpJoingDate='$empjdate' where ID='$eid'");
+
+        $empfinishwork = $_POST['EmpFinishWork'];
+        $empworkingtime = $_POST['EmpWorkingTime'];
+        $empsalary = $_POST['EmpSalary'];
+        $empstatus = $_POST['EmpStatus'];
+        $query = mysqli_query($conn, "update empdetail set EmpFinishWork = '$empfinishwork', EmpWorkingTime = '$empworkingtime', EmpSalary = '$empsalary', EmpStatus = '$empstatus', EmpFName='$FName',  EmpLName='$LName', EmpCode='$empcode', EmpDept='$EmpDept', EmpDesignation='$EmpDesignation', EmpContactNo='$EmpContactNo', EmpGender='$gender',EmpJoingDate='$empjdate' where ID='$eid'");
         if ($query) {
             $msg = "Your profile has been updated.";
         } else {
@@ -136,13 +141,41 @@ if (strlen($_SESSION['uid'] == 0)) {
                             </div>
 
                             <div class="row">
-                                <div class="col-4 mb-3">Employee Joing Date(yyyy-mm-dd)</div>
+                                <div class="col-4 mb-3">Employee Working Time</div>
+                                <div class="col-8 mb-3">
+                                    <input type="text" class="form-control form-control-user" id="EmpWorkingTime"
+                                           name="EmpWorkingTime" aria-describedby="emailHelp"
+                                           value="<?php echo $row['EmpWorkingTime']; ?>" readonly="true">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-4 mb-3">Employee Salary</div>
+                                <div class="col-8 mb-3">
+                                    <input type="text" class="form-control form-control-user" id="EmpSalary"
+                                           name="EmpSalary" aria-describedby="emailHelp"
+                                           value="<?php echo $row['EmpSalary']; ?>" readonly="true">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-4 mb-3">Employee Joing Date(YYYY-MM-DD)</div>
                                 <div class="col-8  mb-3">
                                     <input type="text" class="form-control form-control-user"
                                            value="<?php echo $row['EmpJoingDate']; ?>" id="jDate" name="EmpJoingdate"
                                            aria-describedby="emailHelp">
                                 </div>
                             </div>
+
+                            <div class="row">
+                                <div class="col-4 mb-3">Employee Finish Work Date(YYYY-MM-DD)</div>
+                                <div class="col-8  mb-3">
+                                    <input type="text" class="form-control form-control-user"
+                                           value="<?php echo $row['EmpFinishWork']; ?>" id="empfinishwork" name="EmpFinishWork"
+                                           aria-describedby="emailHelp">
+                                </div>
+                            </div>
+
                             <div class="row">
                                 <div class="col-4 mb-3">Gender</div>
                                 <div class="col-4 mb-3">
@@ -150,7 +183,6 @@ if (strlen($_SESSION['uid'] == 0)) {
                                     <?php if ($row['EmpGender'] == "Male") {
                                         ?>
                                         <input type="radio" id="gender" name="gender" value="Male" checked="true">Male
-
                                         <input type="radio" name="gender" value="Female">Female
                                     <?php } else if ($row['EmpGender'] == "Female") { ?>
                                         <input type="radio" id="gender" name="gender" value="Male">Male
@@ -158,6 +190,23 @@ if (strlen($_SESSION['uid'] == 0)) {
                                     <?php } else { ?>
                                         <input type="radio" id="gender" name="gender" value="Male">Male
                                         <input type="radio" name="gender" value="Female">Female
+                                    <?php } ?>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-4 mb-3">Status</div>
+                                <div class="col-4 mb-3">
+                                    <?php if ($row['EmpStatus'] == "Active") {
+                                        ?>
+                                        <input type="radio" id="EmpStatus" name="EmpStatus" value="Active" checked="true">Active
+                                        <input type="radio" name="EmpStatus" value="Inactive">Inactive
+                                    <?php } else if ($row['EmpStatus'] == "Inactive") { ?>
+                                        <input type="radio" id="EmpStatus" name="EmpStatus" value="Active">Active
+                                        <input type="radio" name="EmpStatus" value="Inactive" checked="true">Inactive
+                                    <?php } else { ?>
+                                        <input type="radio" id="EmpStatus" name="EmpStatus" value="Active">Male
+                                        <input type="radio" name="EmpStatus" value="Inactive">Female
                                     <?php } ?>
                                 </div>
                             </div>
@@ -191,12 +240,9 @@ if (strlen($_SESSION['uid'] == 0)) {
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
-    <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- Core plugin JavaScript-->
     <script src="https://kit.fontawesome.com/e427de2876.js" crossorigin="anonymous"></script>
-    <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
     <script type="text/javascript">
         $(".jDate").datepicker({

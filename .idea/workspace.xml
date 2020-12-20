@@ -20,15 +20,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="632275f8-3b4e-43d8-82d0-d17cabb5061b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/admin/addemp.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/editemp.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/empdelete.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/addemp.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/addemp.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/adminprofile.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/adminprofile.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/allemployees.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/allemployees.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/changepassword.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/changepassword.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/editemp.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/editemp.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/editempedu.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/editempedu.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/editempexp.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/editempexp.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/editempprofile.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/editempprofile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/empdelete.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/empdelete.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/includes/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/includes/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/sidebar.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/welcome.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/welcome.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/changepassword.php" beforeDir="false" afterPath="$PROJECT_DIR$/changepassword.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editmyedu.php" beforeDir="false" afterPath="$PROJECT_DIR$/editmyedu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editmyexp.php" beforeDir="false" afterPath="$PROJECT_DIR$/editmyexp.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forgetpassword.php" beforeDir="false" afterPath="$PROJECT_DIR$/forgetpassword.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myedu.php" beforeDir="false" afterPath="$PROJECT_DIR$/myedu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myexp.php" beforeDir="false" afterPath="$PROJECT_DIR$/myexp.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myprofile.php" beforeDir="false" afterPath="$PROJECT_DIR$/myprofile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resetpassword.php" beforeDir="false" afterPath="$PROJECT_DIR$/resetpassword.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signin.php" beforeDir="false" afterPath="$PROJECT_DIR$/signin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signup.php" beforeDir="false" afterPath="$PROJECT_DIR$/signup.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/welcome.php" beforeDir="false" afterPath="$PROJECT_DIR$/welcome.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +91,8 @@
       <workItem from="1607691009568" duration="19302000" />
       <workItem from="1607772048985" duration="2480000" />
       <workItem from="1607955628077" duration="21890000" />
-      <workItem from="1608056256770" duration="13564000" />
+      <workItem from="1608056256770" duration="13636000" />
+      <workItem from="1608483200318" duration="11803000" />
     </task>
     <task id="LOCAL-00001" summary="Update Admin">
       <created>1607707100906</created>
@@ -90,7 +108,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607732977135</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update admin">
+      <created>1608070070293</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1608070070293</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,6 +131,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update Admin" />
@@ -130,10 +156,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="461" y="170" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1607559231759" />
-    <state x="552" y="254" key="Vcs.Push.Dialog.v2" timestamp="1607732980959">
+    <state x="552" y="254" key="Vcs.Push.Dialog.v2" timestamp="1608070080542">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="254" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1607732980959" />
+    <state x="552" y="254" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1608070080542" />
     <state x="143" y="102" width="672" height="678" key="search.everywhere.popup" timestamp="1607959615456">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

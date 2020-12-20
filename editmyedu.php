@@ -3,12 +3,9 @@ session_start();
 error_reporting(0);
 include('includes/dbconnection.php');
 global $conn;
-//error_reporting(0);
 if (strlen($_SESSION['uid'] == 0)) {
     header('location:logout.php');
 } else {
-
-
     if (isset($_POST['submit'])) {
         $eid=$_SESSION['uid'];
         $coursepg=$_POST['coursepg'];
@@ -36,55 +33,39 @@ if (strlen($_SESSION['uid'] == 0)) {
         }
     }
     ?>
-
     <!DOCTYPE html>
     <html lang="en">
-
     <head>
-
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="Human resource management system">
         <meta name="author" content="Xuan Canh">
-
         <title>Edit My Education</title>
         <script src="https://kit.fontawesome.com/e427de2876.js" crossorigin="anonymous"></script>
-
-        <!-- Custom styles for this template-->
         <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
     </head>
 
     <body id="page-top">
-
     <!-- Page Wrapper -->
     <div id="wrapper">
-
         <!-- Sidebar -->
         <?php include_once('includes/sidebar.php') ?>
         <!-- End of Sidebar -->
-
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
-
             <!-- Main Content -->
             <div id="content">
-
                 <!-- Topbar -->
                 <?php include_once('includes/header.php') ?>
                 <!-- End of Topbar -->
-
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
                     <!-- Page Heading -->
                     <h1 class="h3 mb-4 text-gray-800">Edit My Education</h1>
-
                     <p style="font-size:16px; color:red" align="center"> <?php if ($msg) {
                             echo $msg;
                         } ?> </p>
-
                     <form class="user" method="post" action="">
                         <?php
                         $cid = $_SESSION['uid'];
@@ -93,9 +74,7 @@ if (strlen($_SESSION['uid'] == 0)) {
                         if ($num > 0){
                         $cnt = 1;
                         while ($row = mysqli_fetch_array($ret)) {
-
                             ?>
-
                             <div class="row">
                                 <div class="col-4 mb-3">Course 1</div>
                                 <div class="col-8 mb-3"><input type="text" class="form-control form-control-user"
@@ -110,8 +89,6 @@ if (strlen($_SESSION['uid'] == 0)) {
                                                                aria-describedby="emailHelp"
                                                                value="<?php echo $row['SchoolCollege1']; ?>"></div>
                             </div>
-
-
                             <div class="row">
                                 <div class="col-4 mb-3">Year of Passing 1</div>
                                 <div class="col-8 mb-3">
@@ -119,7 +96,6 @@ if (strlen($_SESSION['uid'] == 0)) {
                                            aria-describedby="emailHelp" value="<?php echo $row['YearPassing1']; ?>">
                                 </div>
                             </div>
-
                             <div class="row">
                                 <div class="col-4 mb-3">Percentage 1</div>
                                 <div class="col-8 mb-3">
@@ -141,8 +117,6 @@ if (strlen($_SESSION['uid'] == 0)) {
                                                                aria-describedby="emailHelp" required="true"
                                                                value="<?php echo $row['SchoolCollege2']; ?>"></div>
                             </div>
-
-
                             <div class="row">
                                 <div class="col-4 mb-3">Year of Passing 2</div>
                                 <div class="col-8 mb-3">
@@ -150,7 +124,6 @@ if (strlen($_SESSION['uid'] == 0)) {
                                            aria-describedby="emailHelp" required="true"
                                            value="<?php echo $row['YearPassing2']; ?>"></div>
                             </div>
-
                             <div class="row">
                                 <div class="col-4 mb-3">Percentage 2</div>
                                 <div class="col-8 mb-3">
@@ -173,8 +146,6 @@ if (strlen($_SESSION['uid'] == 0)) {
                                                                aria-describedby="emailHelp" required="true"
                                                                value="<?php echo $row['SchoolCollege3']; ?>"></div>
                             </div>
-
-
                             <div class="row">
                                 <div class="col-4 mb-3">Year of Passing 3</div>
                                 <div class="col-8 mb-3">
@@ -182,7 +153,6 @@ if (strlen($_SESSION['uid'] == 0)) {
                                            aria-describedby="emailHelp" required="true"
                                            value="<?php echo $row['YearPassing3']; ?>"></div>
                             </div>
-
                             <div class="row">
                                 <div class="col-4 mb-3">Percentage 3</div>
                                 <div class="col-8 mb-3">
@@ -224,7 +194,6 @@ if (strlen($_SESSION['uid'] == 0)) {
                                 </div>
                             </div>
                         <?php } ?>
-
                         <div class="row" style="margin-top:4%">
                             <div class="col-4"></div>
                             <div class="col-4">
@@ -232,47 +201,31 @@ if (strlen($_SESSION['uid'] == 0)) {
                                        class="btn btn-primary btn-user btn-block">
                             </div>
                         </div>
-
                     </form>
-
                     <?php } else { ?>
-
                         <div class="row" style="margin-top:4%">
                             <div class="col-12" style="font-size:18px; color:red;">First Add your education details
                                 after that you can edit education details.
                             </div>
-
                         </div>
                     <?php } ?>
-
                 </div>
                 <!-- /.container-fluid -->
-
             </div>
             <!-- End of Main Content -->
-
             <!-- Footer -->
             <?php include_once('includes/footer.php'); ?>
             <!-- End of Footer -->
-
         </div>
         <!-- End of Content Wrapper -->
-
     </div>
     <!-- End of Page Wrapper -->
-
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
-
-
-    <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-
-    <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
     <script type="text/javascript">
         $(".jDate").datepicker({

@@ -1,7 +1,6 @@
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
     <!-- Topbar Navbar -->
     <ul class="navbar-nav ml-auto">
-
         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
         <li class="nav-item dropdown no-arrow d-sm-none">
             <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown"
@@ -24,22 +23,17 @@
                 </form>
             </div>
         </li>
-
-
         <div class="topbar-divider d-none d-sm-block"></div>
-
         <!-- Nav Item - User Information -->
         <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                aria-haspopup="true" aria-expanded="false">
-
                 <?php
                 global $conn;
                 $adminid = $_SESSION['aid'];
                 $ret = mysqli_query($conn, "select AdminName from admin where ID='$adminid'");
                 $row = mysqli_fetch_array($ret);
                 $name = $row['AdminName'];
-
                 ?>
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $name; ?></span>
                 <img class="img-profile rounded-circle" src="https://img.icons8.com/color/96/000000/admin-settings-male.png">

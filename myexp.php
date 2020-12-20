@@ -3,7 +3,6 @@ session_start();
 error_reporting(0);
 include('includes/dbconnection.php');
 global $conn;
-//error_reporting(0);
 if (strlen($_SESSION['uid'] == 0)) {
     header('location:logout.php');
 } else {
@@ -21,7 +20,6 @@ if (strlen($_SESSION['uid'] == 0)) {
         $emp3des = $_POST['emp3des'];
         $emp3ctc = $_POST['emp3ctc'];
         $emp3wd = $_POST['emp3workduration'];
-
         $query = mysqli_query($conn, "insert into empexp ( EmpID,Employer1Name, Employer1Designation, Employer1CTC,  Employer1WorkDuration, Employer2Name,  Employer2Designation, Employer2CTC, Employer2WorkDuration, Employer3Name, Employer3Designation, Employer3CTC, Employer3WorkDuration) value('$eid','$emp1name', '$emp1des', '$emp1ctc', '$emp1wd', '$emp2name', '$emp2des', '$emp2ctc', '$emp2wd', '$emp3name', '$emp3des', '$emp3ctc', '$emp3wd' )");
         if ($query) {
             $msg = "Your Expirence data has been submitted succeesfully.";
@@ -40,9 +38,9 @@ if (strlen($_SESSION['uid'] == 0)) {
         <meta name="author" content="Xuan Canh">
         <title>My Experience</title>
         <script src="https://kit.fontawesome.com/e427de2876.js" crossorigin="anonymous"></script>
-        <!-- Custom styles for this template-->
         <link href="css/sb-admin-2.min.css" rel="stylesheet">
     </head>
+
     <body id="page-top">
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -209,39 +207,25 @@ if (strlen($_SESSION['uid'] == 0)) {
                                            class="btn btn-primary btn-user btn-block">
                                 </div>
                             </div>
-
                         </form>
-
                     <?php } ?>
-
-
                 </div>
                 <!-- /.container-fluid -->
-
             </div>
             <!-- End of Main Content -->
-
             <!-- Footer -->
             <?php include_once('includes/footer.php'); ?>
             <!-- End of Footer -->
-
         </div>
         <!-- End of Content Wrapper -->
-
     </div>
     <!-- End of Page Wrapper -->
-
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
-
-
-    <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
     <script type="text/javascript">
         $(".jDate").datepicker({

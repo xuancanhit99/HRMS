@@ -10,10 +10,9 @@
     <meta name="author" content="Xuan Canh">
     <title>HRMS | Home Page</title>
     <script src="https://kit.fontawesome.com/e427de2876.js" crossorigin="anonymous"></script>
-    <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
 </head>
+
 <body id="page-top">
 <!-- Page Wrapper -->
 <div id="wrapper">
@@ -27,10 +26,7 @@
                 <div class="d-sm-flex align-items-center justify-content-between mb-4" style="margin-top: 2%">
                     <h1 class="h3 mb-0 text-gray-800">Human Resource Management System</h1>
                 </div>
-
                 <div class="row">
-
-                    <!-- Earnings (Monthly) Card Example -->
                     <div class="col-xl-4 col-md-6 mb-4">
                         <div class="card border-left-primary shadow h-100 py-2">
                             <div class="card-body">
@@ -49,7 +45,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Earnings (Monthly) Card Example -->
                     <div class="col-xl-4 col-md-6 mb-4">
                         <div class="card border-left-success shadow h-100 py-2">
                             <div class="card-body">
@@ -68,7 +63,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Earnings (Monthly) Card Example -->
                     <div class="col-xl-4 col-md-6 mb-4">
                         <div class="card border-left-info shadow h-100 py-2">
                             <div class="card-body">
@@ -87,7 +81,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Pending Requests Card Example -->
                 </div>
             </div>
             <!-- /.container-fluid -->
@@ -101,11 +94,9 @@
     <!-- End of Content Wrapper -->
 </div>
 <!-- End of Page Wrapper -->
-
 <!-- Scroll to Top Button-->
 <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
 </a>
-
 </body>
 </html>

@@ -3,7 +3,7 @@ session_start();
 error_reporting(0);
 include('includes/dbconnection.php');
 global $conn;
-$msg='';
+$msg = '';
 if (strlen($_SESSION['empid'] == 0)) {
     header('location:forgetpassword.php');
 } else {
@@ -18,7 +18,6 @@ if (strlen($_SESSION['empid'] == 0)) {
         }
     }
     ?>
-
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -27,8 +26,7 @@ if (strlen($_SESSION['empid'] == 0)) {
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="Human resource management system">
         <meta name="author" content="Xuan Canh">
-        <title>HRMS Employee Reset</title>
-        <!-- Custom styles for this template-->
+        <title>HRMS Employee Reset Password</title>
         <link href="css/sb-admin-2.min.css" rel="stylesheet">
         <script type="text/javascript">
             function checkpass() {
@@ -43,12 +41,10 @@ if (strlen($_SESSION['empid'] == 0)) {
     </head>
     <body class="bg-gradient-primary">
     <div class="container">
-        <h3 align="center" style="color: black; padding-top: 2%">Human resource management system</h3>
+        <h3 align="center" style="color: black; padding-top: 2%">Human Resource Management System</h3>
         <!-- Outer Row -->
         <div class="row justify-content-center">
-
             <div class="col-xl-10 col-lg-12 col-md-9">
-
                 <div class="card o-hidden border-0 shadow-lg my-5">
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
@@ -66,8 +62,6 @@ if (strlen($_SESSION['empid'] == 0)) {
                                         } ?> </p>
                                     <form class="user" name="changepassword" method="post"
                                           onsubmit="return checkpass();">
-
-
                                         <div class="form-group">
                                             <input type="Password" class="form-control form-control-user"
                                                    id="newpassword" name="newpassword" value="" required="true"
@@ -79,12 +73,9 @@ if (strlen($_SESSION['empid'] == 0)) {
                                                    id="confirmpassword" name="confirmpassword" value="" required="true"
                                                    placeholder="Confirm Your Password" required="true">
                                         </div>
-
                                         <p><input type="submit" class="btn btn-primary btn-user btn-block" name="submit"
                                                   value="Reset"></p>
-
                                         <hr>
-
                                     </form>
                                     <hr>
                                     <div class="text-center">
@@ -94,13 +85,9 @@ if (strlen($_SESSION['empid'] == 0)) {
                             </div>
                         </div>
                     </div>
-
                 </div>
-
             </div>
-
         </div>
     </body>
-
     </html>
 <?php } ?>
