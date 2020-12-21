@@ -43,11 +43,13 @@ if (strlen($_SESSION['aid'] == 0)) {
                     <div class="col-xl-3 col-md-6 mb-4"></div>
                     <!-- Earnings (Monthly) Card Example -->
                     <div class="col-xl-6 col-md-6 mb-4">
-                        <div class="card border-left-primary shadow h-100 py-2">
+
+
+                        <div class="card border-left-primary shadow h-10 py-2">
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                        <div class="text-xs font-weight-bold text-uppercase mb-1">
                                             Welcome Back to HRMS !
                                         </div>
                                         <?php
@@ -64,6 +66,67 @@ if (strlen($_SESSION['aid'] == 0)) {
                                 </div>
                             </div>
                         </div>
+
+
+                        <div class="card shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                            <?php
+                                            $ret = mysqli_query($conn, "select * from empdetail");
+                                            $cnt = 0;
+                                            while ($row = mysqli_fetch_array($ret)) {
+                                                if ($row['EmpReport'] !=  "") {
+                                                    $cnt++;
+                                                }
+                                            }
+                                            ?>
+                                            <?php
+                                            if($cnt==0)
+                                                echo "You have no notifications, have a good day!!!";
+                                            else
+                                                echo "You have " . $cnt . " reports:";
+                                            ?>
+                                        </div>
+                                        <div class="h6 mb-0 font-weight-bold text-gray-800">
+
+                                            <?php
+                                            $ret = mysqli_query($conn, "select * from empdetail");
+                                            $cnt = 0;
+                                            while ($row = mysqli_fetch_array($ret)) {
+                                                if ($row['EmpReport'] !=  "") {
+                                                    $cnt++;
+                                                    echo $cnt . ": " . $row['EmpFName'] . " " . $row['EmpLName']. " " . '<a href="editempprofile.php?editid=' . $row['ID'] . '" title = "Reply"><span style="font-size: 15px;"><i class="fas fa-reply"></i></span></a>' . "<br>" . $row['EmpReport'] . "<br><br>";
+                                                }
+                                            }
+                                            ?>
+                                            <!---
+                                            --->
+                                            <?php
+                                            /*
+                                            if ($empNote == "" && $empAllNote == "")
+                                                if ($empStatus == "")
+                                                    echo "Welcome to our company !!!" . "<br>" . "New members, please update your personal information, experience and education.";
+                                                else
+                                                    echo "You have no notifications, have a good day!!!";
+                                            else if ($empNote != "" && $empAllNote == "")
+                                                echo $empNote;
+                                            else if ($empNote == "" && $empAllNote != "")
+                                                echo '<span style="font-size: 20px; color: skyblue;"><i class="fas fa-bell"></i></span>' . $empAllNote;
+                                            else
+                                                echo $empNote . '<br> <br> <span style="font-size: 20px; color: skyblue;"><i class="fas fa-bell"></i></span>' . " " . $empAllNote;
+                                            */
+                                            ?>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
                     </div>
                 </div>
                 <!-- Content Row -->

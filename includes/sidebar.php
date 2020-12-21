@@ -54,6 +54,11 @@
             <i class="fas fa-fw fa-table"></i>
             <span>Edit My Education</span></a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link" href="reporttoadmin.php">
+            <i class="fas fa-fw fa-comments"></i>
+            <span>Report</span></a>
+    </li>
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 

@@ -78,9 +78,7 @@ if (strlen($_SESSION['uid'] == 0)) {
                         <?php
                         $eid = $_SESSION['uid'];
                         $ret = mysqli_query($conn, "select * from empdetail where ID='$eid'");
-                        $cnt = 1;
                         while ($row = mysqli_fetch_array($ret)) {
-
                             ?>
                             <div class="row">
                                 <div class="col-4 mb-3">First Name</div>
@@ -96,8 +94,6 @@ if (strlen($_SESSION['uid'] == 0)) {
                                                                aria-describedby="emailHelp" required="true"
                                                                value="<?php echo $row['EmpLName']; ?>"></div>
                             </div>
-
-
                             <div class="row">
                                 <div class="col-4 mb-3">Employee Code</div>
                                 <div class="col-8 mb-3">
@@ -105,7 +101,6 @@ if (strlen($_SESSION['uid'] == 0)) {
                                            name="EmpCode" aria-describedby="emailHelp" required="true"
                                            value="<?php echo $row['EmpCode']; ?>"></div>
                             </div>
-
                             <div class="row">
                                 <div class="col-4 mb-3">Employee Dept</div>
                                 <div class="col-8 mb-3">
