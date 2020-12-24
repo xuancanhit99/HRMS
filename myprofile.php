@@ -200,8 +200,8 @@ if (strlen($_SESSION['uid'] == 0)) {
                                         <input type="radio" id="EmpStatus" name="EmpStatus" value="Active">Active
                                         <input type="radio" name="EmpStatus" value="Inactive" checked="true">Inactive
                                     <?php } else { ?>
-                                        <input type="radio" id="EmpStatus" name="EmpStatus" value="Active">Male
-                                        <input type="radio" name="EmpStatus" value="Inactive">Female
+                                        <input type="radio" id="EmpStatus" name="EmpStatus" value="Active">Active
+                                        <input type="radio" name="EmpStatus" value="Inactive">Inactive
                                     <?php } ?>
                                 </div>
                             </div>

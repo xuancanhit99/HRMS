@@ -24,9 +24,9 @@ if (strlen($_SESSION['empid'] == 0)) {
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="Human resource management system">
+        <meta name="description" content="АРМ Отдел Кадров">
         <meta name="author" content="Xuan Canh">
-        <title>HRMS Employee Reset Password</title>
+        <title>АРМ О.К Employee Reset Password</title>
         <link href="css/sb-admin-2.min.css" rel="stylesheet">
         <script type="text/javascript">
             function checkpass() {
@@ -41,7 +41,7 @@ if (strlen($_SESSION['empid'] == 0)) {
     </head>
     <body class="bg-gradient-primary">
     <div class="container">
-        <a href="index.php"><h3 align="center" style="color: black; padding-top: 2%">Human resource management system</h3></a>
+        <a href="index.php"><h3 align="center" style="color: black; padding-top: 2%">АРМ Отдел Кадров</h3></a>
         <!-- Outer Row -->
         <div class="row justify-content-center">
             <div class="col-xl-10 col-lg-12 col-md-9">
