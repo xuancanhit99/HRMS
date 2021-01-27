@@ -10,10 +10,10 @@ if (strlen($_SESSION['uid'] == 0)) {
         $empid = $_SESSION['uid'];
         $cpassword = $_POST['currentpassword'];
         $newpassword = $_POST['newpassword'];
-        $query = mysqli_query($conn, "select ID from empdetail where ID='$empid' and EmpPassword='$cpassword'");
+        $query = mysqli_query($conn, "select ID from empdetail where ID='$empid' and EmpPassword=md5('$cpassword')");
         $row = mysqli_fetch_array($query);
         if ($row > 0) {
-            $ret = mysqli_query($conn, "update empdetail set EmpPassword='$newpassword' where ID='$empid'");
+            $ret = mysqli_query($conn, "update empdetail set EmpPassword=md5('$newpassword') where ID='$empid'");
             $msg = "Your password successully changed";
         } else {
             $msg = "Your current password is wrong";
@@ -27,7 +27,7 @@ if (strlen($_SESSION['uid'] == 0)) {
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="Human resource management system">
+        <meta name="description" content="АРМ Отдел Кадров">
         <meta name="author" content="Xuan Canh">
         <title>Change Password</title>
         <script src="https://kit.fontawesome.com/e427de2876.js" crossorigin="anonymous"></script>

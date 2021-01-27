@@ -12,9 +12,9 @@ if (strlen($_SESSION['aid'] == 0)) {
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Human resource management system">
+    <meta name="description" content="АРМ Отдел Кадров">
     <meta name="author" content="Xuan Canh">
-    <title>Welcome to Human Resource Management System</title>
+    <title>Welcome to АРМ Отдел Кадров</title>
     <script src="https://kit.fontawesome.com/e427de2876.js" crossorigin="anonymous"></script>
     <link href="../css/sb-admin-2.min.css" rel="stylesheet">
 </head>
@@ -36,7 +36,7 @@ if (strlen($_SESSION['aid'] == 0)) {
             <div class="container-fluid">
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800">Human Resource Management System</h1>
+                    <h1 class="h3 mb-0 text-gray-800">АРМ Отдел Кадров</h1>
                 </div>
                 <!-- Content Row -->
                 <div class="row">
@@ -50,7 +50,7 @@ if (strlen($_SESSION['aid'] == 0)) {
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-uppercase mb-1">
-                                            Welcome Back to HRMS !
+                                            Welcome Back to АРМ О.К !
                                         </div>
                                         <?php
                                         $adminid = $_SESSION['aid'];

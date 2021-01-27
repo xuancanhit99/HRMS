@@ -20,13 +20,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="632275f8-3b4e-43d8-82d0-d17cabb5061b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/a.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/addemp.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/addemp.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/adminprofile.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/adminprofile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/allemployees.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/allemployees.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/changepassword.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/changepassword.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/editemp.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/editemp.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/editempedu.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/editempedu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/editempexp.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/editempexp.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/editempprofile.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/editempprofile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/empallnote.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/empallnote.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/empdelete.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/empdelete.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/includes/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/includes/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/sidebar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/welcome.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/welcome.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/changepassword.php" beforeDir="false" afterPath="$PROJECT_DIR$/changepassword.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/sb-admin-2.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/sb-admin-2.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editmyedu.php" beforeDir="false" afterPath="$PROJECT_DIR$/editmyedu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editmyexp.php" beforeDir="false" afterPath="$PROJECT_DIR$/editmyexp.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/forgetpassword.php" beforeDir="false" afterPath="$PROJECT_DIR$/forgetpassword.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/footer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/sidebar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/bootstrap.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/jquery.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/sb-admin-2.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/sb-admin-2.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myedu.php" beforeDir="false" afterPath="$PROJECT_DIR$/myedu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myexp.php" beforeDir="false" afterPath="$PROJECT_DIR$/myexp.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myprofile.php" beforeDir="false" afterPath="$PROJECT_DIR$/myprofile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reporttoadmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/reporttoadmin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resetpassword.php" beforeDir="false" afterPath="$PROJECT_DIR$/resetpassword.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signin.php" beforeDir="false" afterPath="$PROJECT_DIR$/signin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signup.php" beforeDir="false" afterPath="$PROJECT_DIR$/signup.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/welcome.php" beforeDir="false" afterPath="$PROJECT_DIR$/welcome.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,9 +66,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$USER_HOME$/Desktop/db/hrmsdb.sql" root0="SKIP_HIGHLIGHTING" />
-  </component>
   <component name="ProjectId" id="1lRTx6wNPViUzBTbS3iZNB0YM8P" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -51,7 +75,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/HRMS" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../resblog" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -87,6 +111,11 @@
       <workItem from="1608762486818" duration="73000" />
       <workItem from="1608763656899" duration="13485000" />
       <workItem from="1608838938699" duration="1885000" />
+      <workItem from="1608841551841" duration="3216000" />
+      <workItem from="1608877416912" duration="7471000" />
+      <workItem from="1608891879318" duration="37000" />
+      <workItem from="1610215001571" duration="607000" />
+      <workItem from="1610221311954" duration="127000" />
     </task>
     <task id="LOCAL-00001" summary="Update Admin">
       <created>1607707100906</created>
@@ -144,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608764058508</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Final Website">
+      <created>1608841593397</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1608841593397</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,7 +206,8 @@
     <MESSAGE value="update report to admin" />
     <MESSAGE value="Update final" />
     <MESSAGE value="fix sidebar" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix sidebar" />
+    <MESSAGE value="Final Website" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final Website" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="166" key="#Plugins" timestamp="1608638056807">
@@ -181,10 +218,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="640" y="261" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1608573109517" />
-    <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1608764155997">
+    <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1610221437965">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="740" y="280" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1608764155997" />
+    <state x="740" y="280" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1610221437965" />
     <state x="836" y="427" key="Github.ShareDialog" timestamp="1607701626984">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -193,18 +230,18 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="1040" y="143" key="Github.UntrackedFilesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1607701682766" />
-    <state x="1243" y="572" key="NewPhpFileDialog" timestamp="1608771668313">
+    <state x="1243" y="572" key="NewPhpFileDialog" timestamp="1608850115922">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="1243" y="572" key="NewPhpFileDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1608771668313" />
+    <state x="1243" y="572" key="NewPhpFileDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1608850115922" />
     <state x="38" y="161" key="SettingsEditor" timestamp="1608638186908">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="38" y="161" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1608638186908" />
-    <state x="552" y="254" key="Vcs.Push.Dialog.v2" timestamp="1608764062932">
+    <state x="552" y="254" key="Vcs.Push.Dialog.v2" timestamp="1608841605571">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="254" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1608764062932" />
+    <state x="552" y="254" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1608841605571" />
     <state x="1056" y="394" key="cloudConfig.SelfSettingsDialog" timestamp="1608572812090">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

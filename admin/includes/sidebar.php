@@ -4,7 +4,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-address-card"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">HRMS Admin</div>
+        <div class="sidebar-brand-text mx-3">АРМ О.К Admin</div>
     </a>
     <!-- Divider -->
     <hr class="sidebar-divider my-0">

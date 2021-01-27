@@ -25,7 +25,7 @@ if (isset($_POST['submit'])) {
         $msg = "This email already associated with another account";
     } else {
         $query = mysqli_query($conn, "insert into empdetail(EmpFName, EmpLName, EmpCode, EmpEmail, EmpPassword, EmpDept, EmpDesignation, EmpContactNo, EmpWorkingTime, EmpSalary, EmpJoingDate, EmpFinishWork, EmpNote, EmpGender, EmpStatus) value('$FName', 
-'$LName', '$empcode', '$Email', '$Password', '$EmpDept', '$EmpDesignation', '$EmpContactNo', '$empworkingtime', '$empsalary', '$empjdate', '$empfinishwork', '$empnote', '$gender', '$empstatus')");
+'$LName', '$empcode', '$Email', md5('$Password'), '$EmpDept', '$EmpDesignation', '$EmpContactNo', '$empworkingtime', '$empsalary', '$empjdate', '$empfinishwork', '$empnote', '$gender', '$empstatus')");
         if ($query) {
             $eid  = $conn->insert_id;
             $msg = "You have successfully added." . '<br>' . "You can add emp's education, experiences in the edit of the table";
@@ -42,7 +42,7 @@ if (isset($_POST['submit'])) {
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Human resource management system">
+    <meta name="description" content="АРМ Отдел Кадров">
     <meta name="author" content="Xuan Canh">
     <title>Add Employee Profile</title>
     <script src="https://kit.fontawesome.com/e427de2876.js" crossorigin="anonymous"></script>

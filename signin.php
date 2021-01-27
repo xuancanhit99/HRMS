@@ -6,7 +6,7 @@ global $conn;
 if (isset($_POST['login'])) {
     $Email = $_POST['Email'];
     $Password = $_POST['Password'];
-    $query = mysqli_query($conn, "select ID from empdetail where  EmpEmail='$Email' && EmpPassword='$Password' ");
+    $query = mysqli_query($conn, "select ID from empdetail where  EmpEmail='$Email' && EmpPassword=md5('$Password') ");
     $ret = mysqli_fetch_array($query);
     if ($ret > 0) {
         $_SESSION['uid'] = $ret['ID'];
@@ -23,15 +23,15 @@ if (isset($_POST['login'])) {
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Human resource management system">
+    <meta name="description" content="АРМ Отдел Кадров">
     <meta name="author" content="Xuan Canh">
-    <title>HRMS Signin</title>
+    <title>АРМ О.К Signin</title>
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 </head>
 
 <body class="bg-gradient-primary">
 <div class="container">
-    <a href="index.php"><h3 align="center" style="color: black; padding-top: 2%">Human Resource Management System</h3></a>
+    <a href="index.php"><h3 align="center" style="color: black; padding-top: 2%">АРМ Отдел Кадров</h3></a>
     <!-- Outer Row -->
     <div class="row justify-content-center">
         <div class="col-xl-10 col-lg-12 col-md-9">

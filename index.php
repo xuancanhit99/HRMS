@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Human resource management system">
+    <meta name="description" content="АРМ Отдел Кадров">
     <meta name="keywords"
           content="Human Resource Management, Employee manager, Управление человеческими ресурсами, Менеджер по сотрудникам"/>
     <meta name="author" content="Xuan Canh">
-    <title>HRMS | Home Page</title>
+    <title>АРМ О.К | Home Page</title>
     <script src="https://kit.fontawesome.com/e427de2876.js" crossorigin="anonymous"></script>
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 </head>
@@ -24,7 +24,7 @@
             <div class="container-fluid">
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4" style="margin-top: 2%">
-                    <h1 class="h3 mb-0 text-gray-800">Human Resource Management System</h1>
+                    <h1 class="h3 mb-0 text-gray-800">АРМ Отдел Кадров</h1>
                 </div>
                 <div class="row">
                     <div class="col-xl-4 col-md-6 mb-4">

@@ -22,7 +22,7 @@ if (strlen($_SESSION['aid'] == 0)) {
         $empsalary = $_POST['EmpSalary'];
         $empnote = $_POST['EmpNote'];
         $empstatus = $_POST['EmpStatus'];
-        $query = mysqli_query($conn, "update empdetail set EmpPassword = '$empPassword', EmpFinishWork = '$empfinishwork', EmpWorkingTime = '$empworkingtime', EmpSalary = '$empsalary', EmpNote = '$empnote', EmpStatus = '$empstatus', EmpFName='$FName',  EmpLName='$LName', EmpCode='$empcode', EmpDept='$EmpDept', EmpDesignation='$EmpDesignation', EmpContactNo='$EmpContactNo', EmpGender='$gender',EmpJoingDate='$empjdate' where ID='$eid'");
+        $query = mysqli_query($conn, "update empdetail set EmpPassword = md5('$empPassword'), EmpFinishWork = '$empfinishwork', EmpWorkingTime = '$empworkingtime', EmpSalary = '$empsalary', EmpNote = '$empnote', EmpStatus = '$empstatus', EmpFName='$FName',  EmpLName='$LName', EmpCode='$empcode', EmpDept='$EmpDept', EmpDesignation='$EmpDesignation', EmpContactNo='$EmpContactNo', EmpGender='$gender',EmpJoingDate='$empjdate' where ID='$eid'");
         if ($query) {
             $msg = "Employee profile has been updated.";
         } else {
@@ -37,7 +37,7 @@ if (strlen($_SESSION['aid'] == 0)) {
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="Human resource management system">
+        <meta name="description" content="АРМ Отдел Кадров">
         <meta name="author" content="Xuan Canh">
         <title>Edit Employee Profile</title>
         <script src="https://kit.fontawesome.com/e427de2876.js" crossorigin="anonymous"></script>

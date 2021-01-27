@@ -13,7 +13,7 @@ if (isset($_POST['submit'])) {
     if ($result > 0) {
         $msg = "This email already associated with another account";
     } else {
-        $query = mysqli_query($conn, "insert into empdetail(EmpFName, EmpLName, EmpCode, EmpEmail,  EmpPassword) value('$FName', '$LName', '$empcode', '$Email', '$Password' )");
+        $query = mysqli_query($conn, "insert into empdetail(EmpFName, EmpLName, EmpCode, EmpEmail,  EmpPassword) value('$FName', '$LName', '$empcode', '$Email', md5('$Password') )");
         if ($query) {
             $msg = "You have successfully registered";
         } else {
@@ -30,9 +30,9 @@ if (isset($_POST['submit'])) {
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Human resource management system">
+    <meta name="description" content="АРМ Отдел Кадров">
     <meta name="author" content="Xuan Canh">
-    <title>HRMS Signup</title>
+    <title>АРМ О.К Signup</title>
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <script type="text/javascript">
         function checkpass() {
@@ -48,7 +48,7 @@ if (isset($_POST['submit'])) {
 
 <body class="bg-gradient-primary">
 <div class="container">
-    <a href="index.php"><h3 align="center" style="color: black; padding-top: 1%">Human resource management system</h3></a>
+    <a href="index.php"><h3 align="center" style="color: black; padding-top: 1%">АРМ Отдел Кадров</h3></a>
     <div class="card o-hidden border-0 shadow-lg my-5">
         <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
